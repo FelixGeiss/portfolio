@@ -49,27 +49,43 @@ $gap-10: 16px;
 $gap-8: 8px;
 $gap-2: 2px;
 
-$flex: flex;
-$flex-row: row;
-$flex-column: column;
-$justify-start: flex-start;
-$justify-end: flex-end;
-$justify-center: center;
-$justify-between: space-between;
-$justify-around: space-around;
-$justify-evenly: space-evenly;
 
 $align-center: center;
 $align-stretch: stretch;
-
-
 $grow-1: 1;
 $nowrap: nowrap;
+
+$flex-center: (
+  display: flex,
+  justify-content: center,
+  align-items: center
+);
+
+$flex-row-center: (
+  display: flex,
+  flex-direction: row,
+  justify-content: center,
+  align-items: center
+);
+
+$flex-column-center: (
+  display: flex,
+  flex-direction: column,
+  justify-content: center,
+  align-items: center
+);
+
+$flex-between: (
+  display: flex,
+  justify-content: space-between,
+  align-items: center
+);
+
 
 body {
   margin: 0;
   box-sizing: border-box;
-//   background-color: $backround-Blue;
+  color: white;
 }
 
 
