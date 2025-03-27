@@ -1,0 +1,16 @@
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(11,4,45); /* Fallback */
+    background: linear-gradient(
+      to top left,
+      #120B35 0%,
+      rgba(76,0,255,1) 50%,
+      #120B35 100%
+    );
+    z-index: 1;
+  }
+  

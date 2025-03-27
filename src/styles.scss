@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+// color
+
+$backround-blue: #120b35;
+$primary-red: #e15544;
+$error-red: #f92103;
+$turquoise: #02f4bf;
+
+// Fonts
+$font-logo: "handjet", Arial, Helvetica, sans-serif;
+$font-primary: "RobotoMono", Arial, Helvetica, sans-serif;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+@font-face {
+  font-family: "handjet";
+  src: url("/Handjet-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RobotoMono";
+  src: url("/RobotoMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url("/RobotoMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url("/RobotoMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+//   Layout-Variablen
+$gap-100: 100px;
+$gap-40: 40px;
+$gap-48: 48px;
+$gap-32: 32px;
+$gap-10: 10px;
+$gap-10: 16px;
+$gap-8: 8px;
+$gap-2: 2px;
+
+$flex: flex;
+$flex-row: row;
+$flex-column: column;
+$justify-start: flex-start;
+$justify-end: flex-end;
+$justify-center: center;
+$justify-between: space-between;
+$justify-around: space-around;
+$justify-evenly: space-evenly;
+
+$align-center: center;
+$align-stretch: stretch;
+
+
+$grow-1: 1;
+$nowrap: nowrap;
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+//   background-color: $backround-Blue;
+}
+
+
+a {
+    all: unset;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  
