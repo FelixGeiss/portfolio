@@ -8,33 +8,40 @@ $turquoise: #02f4bf;
 // Fonts
 $font-logo: "handjet", Arial, Helvetica, sans-serif;
 $font-primary: "RobotoMono", Arial, Helvetica, sans-serif;
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 700;
+$regular: 400;
+$medium: 500;
+$bold: 700;
 
 @font-face {
   font-family: "handjet";
-  src: url("/Handjet-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/Handjet-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "handjet";
+  src: url("assets/fonts/Handjet-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "RobotoMono";
-  src: url("/RobotoMono-Regular.ttf") format("truetype");
+  src: url("assets/fonts/RobotoMono-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "RobotoMono";
-  src: url("/RobotoMono-Medium.ttf") format("truetype");
+  src: url("assets/fonts/RobotoMono-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "RobotoMono";
-  src: url("/RobotoMono-Bold.ttf") format("truetype");
+  src: url("assets/fonts/RobotoMono-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -49,38 +56,37 @@ $gap-10: 16px;
 $gap-8: 8px;
 $gap-2: 2px;
 
+$f-s-48:48px;
+$f-s-22:22px;
 
+
+$breakpoint-lg: 992px;
+
+$max-width: 1920px;
 $align-center: center;
 $align-stretch: stretch;
 $grow-1: 1;
 $nowrap: nowrap;
 
-$flex-center: (
-  display: flex,
-  justify-content: center,
-  align-items: center
-);
-
 $flex-row-center: (
   display: flex,
   flex-direction: row,
   justify-content: center,
-  align-items: center
+  align-items: center,
 );
 
 $flex-column-center: (
   display: flex,
   flex-direction: column,
   justify-content: center,
-  align-items: center
+  align-items: center,
 );
 
 $flex-between: (
   display: flex,
   justify-content: space-between,
-  align-items: center
+  align-items: center,
 );
-
 
 body {
   margin: 0;
@@ -88,11 +94,20 @@ body {
   color: white;
 }
 
-
 a {
-    all: unset;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-  }
-  
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+@media (max-width: 992px) {
+
+}

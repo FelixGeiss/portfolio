@@ -1,0 +1,13 @@
+@mixin flex-center($jc: center, $ai:center ,$gp:0px ,$fd:row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap:$gp;
+    flex-direction: $fd;
+  }
+
+  @mixin respond-to($breakpoint-lg) {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  }

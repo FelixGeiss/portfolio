@@ -1,0 +1,51 @@
+@import "../../mixin.scss";
+@import "../../styles.scss";
+
+:host {
+  @include flex-center();
+}
+
+nav {
+  @include flex-center($jc: space-between);
+  @include respond-to($breakpoint-lg) {
+    padding: 24px 70px;
+  }
+  max-width: $max-width;
+  width: 100%;
+  padding: 24px 140px;
+  white-space: nowrap;
+  color: $primary-red;
+  font-family: $font-primary;
+  font-weight: $medium;
+  font-size: $f-s-22;
+
+  > ul {
+    @include flex-center($gp: $gap-48);
+    margin-right:48px;
+    > li:first-child {
+      font-size: $f-s-48;
+      font-family: $font-logo;
+      font-weight: $bold;
+    }
+
+    > li:not(:first-child) {
+      &:hover {
+        color: $turquoise;
+      }
+    }
+  }
+    
+}
+
+span{
+    @include flex-center();
+    font-family: $font-primary;
+    font-weight: $medium;
+    font-size: $f-s-22;
+    p {
+        margin: 0;
+        &:hover {
+          color: $turquoise;
+        }
+      }
+}
