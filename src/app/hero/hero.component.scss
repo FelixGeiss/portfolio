@@ -1,0 +1,84 @@
+@import "../../mixin.scss";
+@import "../../styles.scss";
+
+:host {
+  @include flex-center();
+  width: 100%;
+  margin-top: 101px;
+}
+header {
+  @include flex-center($ai: space-between);
+  position: relative;
+  height: 100%;
+  max-height: 550px;
+  gap: $gap-100;
+  width: 100%;
+}
+
+.hero-left {
+  @include flex-center($fd: column, $jc: space-between);
+  width: 70%;
+
+  > div {
+    @include flex-center();
+    height: 50%;
+  }
+
+  > div:nth-child(1) {
+    @include flex-center();
+    width: 100%;
+    justify-content: space-between;
+
+    > div:nth-child(2) {
+      height: 100%;
+      @include flex-center($ai: flex-end);
+      > img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  > div:nth-child(2) {
+    @include flex-center($fd: column, $jc: flex-end, $ai:flex-start);
+  }
+}
+
+button {
+  color: $primary-red;
+  font-family: $font-primary;
+  font-weight: $medium;
+  font-size: $f-s-18;
+  border: 1px solid $turquoise;
+  height: 52px;
+  width: 169px;
+  transform: rotate(90deg);
+
+  &:hover {
+    color: $turquoise;
+  }
+}
+
+.img-container {
+  > img {
+    max-width: 367px;
+    min-width: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+}    
+
+h1,h2{
+    color: $turquoise;
+    font-family: $font-primary;
+    font-weight: $medium;
+    line-height: 1.2;
+    white-space: nowrap;
+    
+}
+
+h2{
+    font-size: $f-s-54;
+}
+
+h1{
+   font-size: $f-s-82; 
+}

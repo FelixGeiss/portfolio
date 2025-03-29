@@ -1,3 +1,10 @@
+
+html {
+  font-size: 16px;
+}
+
+
+
 // color
 
 $backround-blue: #120b35;
@@ -46,6 +53,9 @@ $bold: 700;
   font-style: normal;
 }
 
+
+
+
 //   Layout-Variablen
 $gap-100: 100px;
 $gap-40: 40px;
@@ -56,8 +66,13 @@ $gap-10: 16px;
 $gap-8: 8px;
 $gap-2: 2px;
 
-$f-s-48:48px;
-$f-s-22:22px;
+// font Size
+$f-s-82: 5.125rem;
+$f-s-54: 3.375rem;
+$f-s-48: 3rem;
+$f-s-22: 1.375rem;
+$f-s-18: 1.125rem;
+
 
 
 $breakpoint-lg: 992px;
@@ -92,7 +107,11 @@ body {
   margin: 0;
   box-sizing: border-box;
   color: white;
+  background-color: $backround-blue;
+  width: 100%;
+  height: 100%;
 }
+
 
 a {
   all: unset;
@@ -104,6 +123,22 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  -webkit-appearance: none; 
+  -moz-appearance: none;   
+  appearance: none;
+}
+
+h1,h2,h3,h4{
+  margin: 0;
 }
 
 

@@ -3,6 +3,18 @@
 
 :host {
   @include flex-center();
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(
+    to bottom,
+    #120b35 0%,
+    #120b35 60%,
+    rgba(18, 11, 53, 0) 124%
+  
+  );
+
+  top: 0;
 }
 
 nav {
