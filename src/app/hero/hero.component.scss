@@ -32,13 +32,24 @@ header {
     > div:nth-child(2) {
       height: 100%;
       @include flex-center($ai: flex-end);
-      > img {
-        transform: rotate(180deg);
+      > .icon {
+        width: 22px;
+        height: 50px;
+        padding: 10px;
+        background-image: url("../../assets/img/arrow up .svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: scaleY(-1);
+        transition: all 125ms ease-out;
+        &:hover {
+          border: 1px solid $turquoise;
+          background-image: url("../../assets/img/arrow-up-hover.svg");
+        }
       }
     }
   }
   > div:nth-child(2) {
-    @include flex-center($fd: column, $jc: flex-end, $ai:flex-start);
+    @include flex-center($fd: column, $jc: flex-end, $ai: flex-start);
   }
 }
 
@@ -48,8 +59,7 @@ button {
   font-weight: $medium;
   font-size: $f-s-18;
   border: 1px solid $turquoise;
-  height: 52px;
-  width: 169px;
+  padding: 15px 10px;
   transform: rotate(90deg);
 
   &:hover {
@@ -64,21 +74,21 @@ button {
     object-fit: cover;
     width: 100%;
   }
-}    
-
-h1,h2{
-    color: $turquoise;
-    font-family: $font-primary;
-    font-weight: $medium;
-    line-height: 1.2;
-    white-space: nowrap;
-    
 }
 
-h2{
-    font-size: $f-s-54;
+h1,
+h2 {
+  color: $turquoise;
+  font-family: $font-primary;
+  font-weight: $medium;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
-h1{
-   font-size: $f-s-82; 
+h2 {
+  font-size: $f-s-54;
+}
+
+h1 {
+  font-size: $f-s-82;
 }
