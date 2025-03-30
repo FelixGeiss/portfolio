@@ -57,6 +57,7 @@ $bold: 700;
 //   Layout-Variablen
 $gap-105: 6.56rem;
 $gap-100: 6.25rem;
+$gap-64: 4rem;
 $gap-40: 2.5rem;
 $gap-48: 3rem;
 $gap-32: 2rem;
@@ -66,6 +67,12 @@ $gap-16: 1rem;
 $gap-8: 0.5rem;
 $gap-2: 0.125rem;
 
+
+$img-w-32:2rem;
+$img-w-19:1.1875rem;
+$img-h-8:0.5rem;
+
+
 // font Size
 $f-s-82: 5.125rem;
 $f-s-54: 3.375rem;
@@ -73,8 +80,11 @@ $f-s-48: 3rem;
 $f-s-22: 1.375rem;
 $f-s-18: 1.125rem;
 
-
 $max-width: 1920px;
+$max-width-729: 45.5625rem;
+$max-width-568: 35.5rem;
+$max-width-490: 30.625rem;
+
 $align-center: center;
 $align-stretch: stretch;
 $grow-1: 1;
@@ -136,7 +146,8 @@ button {
 h1,
 h2,
 h3,
-h4 {
+h4,
+p {
   margin: 0;
 }
 
