@@ -4,30 +4,31 @@
 :host {
   @include flex-center();
   width: 100%;
-  margin-top: 101px;
+  margin-top: 94px;
 }
 header {
-  @include flex-center($ai: space-between);
+  @include flex-center($ai: space-between, $jc: space-between);
   position: relative;
   height: 100%;
   max-height: 550px;
+  max-width: $max-width;
   gap: $gap-100;
   width: 100%;
+ margin: 0 $gap-105;
+
 }
 
 .hero-left {
-  @include flex-center($fd: column, $jc: space-between);
+  @include flex-center($fd: column, $jc: space-between, $ai: flex-start);
   width: 70%;
 
   > div {
-    @include flex-center();
     height: 50%;
   }
 
   > div:nth-child(1) {
-    @include flex-center();
+    @include flex-center($jc: space-between);
     width: 100%;
-    justify-content: space-between;
 
     > div:nth-child(2) {
       height: 100%;
@@ -59,8 +60,8 @@ button {
   font-weight: $medium;
   font-size: $f-s-18;
   border: 1px solid $turquoise;
-  padding: 15px 10px;
-  transform: rotate(90deg);
+  padding: 10px 15px;
+  transform: rotate(-90deg);
 
   &:hover {
     color: $turquoise;
@@ -70,7 +71,6 @@ button {
 .img-container {
   > img {
     max-width: 367px;
-    min-width: 200px;
     object-fit: cover;
     width: 100%;
   }

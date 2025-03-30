@@ -19,12 +19,10 @@
 
 nav {
   @include flex-center($jc: space-between);
-  @include respond-to($breakpoint-lg) {
-    padding: 24px 70px;
-  }
+
   max-width: $max-width;
   width: 100%;
-  padding: 24px 140px;
+  margin: $gap-24 $gap-105;
   white-space: nowrap;
   color: $primary-red;
   font-family: $font-primary;
@@ -33,7 +31,6 @@ nav {
 
   > ul {
     @include flex-center($gp: $gap-48);
-    margin-right:48px;
     > li:first-child {
       font-size: $f-s-48;
       font-family: $font-logo;

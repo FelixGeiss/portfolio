@@ -6,8 +6,3 @@
     flex-direction: $fd;
   }
 
-  @mixin respond-to($breakpoint-lg) {
-    @media (max-width: $breakpoint-lg) {
-      @content;
-    }
-  }

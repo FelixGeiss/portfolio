@@ -1,13 +1,10 @@
-
 html {
-  font-size: 100%; 
+  font-size: 100%;
 }
 
 * {
   transition: all 125ms ease-out;
 }
-
-
 
 // color
 
@@ -57,18 +54,17 @@ $bold: 700;
   font-style: normal;
 }
 
-
-
-
 //   Layout-Variablen
-$gap-100: 100px;
-$gap-40: 40px;
-$gap-48: 48px;
-$gap-32: 32px;
-$gap-10: 10px;
-$gap-10: 16px;
-$gap-8: 8px;
-$gap-2: 2px;
+$gap-105: 6.56rem;
+$gap-100: 6.25rem;
+$gap-40: 2.5rem;
+$gap-48: 3rem;
+$gap-32: 2rem;
+$gap-24: 1.5rem;
+$gap-10: 0.625rem;
+$gap-16: 1rem;
+$gap-8: 0.5rem;
+$gap-2: 0.125rem;
 
 // font Size
 $f-s-82: 5.125rem;
@@ -77,9 +73,6 @@ $f-s-48: 3rem;
 $f-s-22: 1.375rem;
 $f-s-18: 1.125rem;
 
-
-
-$breakpoint-lg: 992px;
 
 $max-width: 1920px;
 $align-center: center;
@@ -116,7 +109,6 @@ body {
   height: 100%;
 }
 
-
 a {
   all: unset;
   cursor: pointer;
@@ -136,29 +128,36 @@ button {
   color: inherit;
   font: inherit;
   cursor: pointer;
-  -webkit-appearance: none; 
-  -moz-appearance: none;   
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
 }
 
-
+@media (max-width: 1200px) {
+  html {
+    font-size: 11px;
+  }
+}
 
 @media (max-width: 992px) {
   html {
-    font-size: 12px; 
+    font-size: 9px;
   }
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   html {
-    font-size: 10px; 
+    font-size: 8px;
   }
 }
 // @media (max-width: 576px) {
 //   html {
-//     font-size: 14px; 
+//     font-size: 14px;
 //   }
 // }
