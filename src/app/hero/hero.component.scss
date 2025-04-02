@@ -4,16 +4,16 @@
 :host {
   @include flex-center();
   width: 100%;
-  margin-top: 94px;
+  height: 100%;
+  margin-top: 5.875rem;
 }
 header {
   @include flex-center($ai: space-between, $jc: space-between);
   position: relative;
-  height: 100%;
-  max-height: 550px;
   max-width: $max-width;
   gap: $gap-100;
   width: 100%;
+  height: 100%;
  margin: 0 $gap-105;
 
 }
@@ -69,12 +69,18 @@ button {
 }
 
 .img-container {
-  > img {
-    max-width: 367px;
-    object-fit: cover;
+  width: 33.6875rem;
+  overflow: hidden; // Überschüssiger Inhalt wird verborgen
+
+  img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; // Bild füllt den Container vollständig aus
+    object-position: top; // Bild wird oben ausgerichtet, sodass unten abgeschnitten wird
   }
 }
+
+
 
 h1,
 h2 {

@@ -1,7 +1,62 @@
-// :host {
+@import "../../mixin.scss";
+@import "../../styles.scss";
 
-// }
+:host {
+  @include flex-center();
+  width: 100%;
+  height: 100%;
+}
+.main-container {
+  @include flex-center($fd: column);
+  margin-left: $gap-105;
+  margin-right: $gap-105;
+  width: 100%;
+  h2 {
+    width: 100%;
+    text-align: left;
+  }
+}
+.skills-icons {
+  @include flex-center($jc: flex-start);
+  flex-wrap: wrap;
+  width: 100%;
+  gap:$gap-100;
 
+  > div {
+    @include flex-center($fd: column);
+    text-align: center;
+
+    img {
+      width: 3.75rem;
+    }
+  }
+  h6 {
+    font-size: $f-s-18;
+    font-family:$font-primary ;
+    color:$turquoise ;
+    font-weight:$bold ;
+  }
+
+  p{
+    display: none;
+    text-align: left;
+    font-size: $f-s-18;
+    font-family:$font-primary ;
+    color:$turquoise ;
+    font-weight:$regular
+  }
+}
+.challenge-container:hover + div p {
+    display: block;
+  }
+
+
+
+h2{
+    font-size:$f-s-54 ; 
+    font-weight:$bold ;
+    color:$primary-red ;
+}
 // .background {
 //   width: 100%;
 //   height: 100%;
