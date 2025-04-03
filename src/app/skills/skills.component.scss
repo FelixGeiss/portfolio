@@ -6,65 +6,66 @@
   width: 100%;
   height: 100%;
 }
+
 .main-container {
   @include flex-center($fd: column);
   margin-left: $gap-105;
   margin-right: $gap-105;
   width: 100%;
+
   h2 {
     width: 100%;
     text-align: left;
+    font-size: $f-s-54;
+    font-weight: $bold;
+    color: $primary-red;
   }
 }
+
 .skills-icons {
-  @include flex-center($jc: flex-start);
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   width: 100%;
-  gap:$gap-100;
+  justify-items: center;
+  gap: $gap-32;
 
   > div {
     @include flex-center($fd: column);
-    text-align: center;
+    width: 6.75rem; 
 
     img {
       width: 3.75rem;
     }
-  }
-  h6 {
-    font-size: $f-s-18;
-    font-family:$font-primary ;
-    color:$turquoise ;
-    font-weight:$bold ;
+
+    h6 {
+      font-size: $f-s-18;
+      font-family: $font-primary;
+      color: $turquoise;
+      font-weight: $bold;
+      text-align: center;
+    }
   }
 
-  p{
-    display: none;
-    text-align: left;
-    font-size: $f-s-18;
-    font-family:$font-primary ;
-    color:$turquoise ;
-    font-weight:$regular
+  .challenge-container {
+    display: flex; 
+    align-items: center; 
+    gap: $gap-16; 
+    position: relative;
+
+    p {
+      position: absolute;
+      left: 123%;
+      text-align: left;
+      font-size: $f-s-18;
+      font-family: $font-primary;
+      color: $turquoise;
+      font-weight: $regular;
+      width: 17.25rem;
+      display: none;
+    }
+
+    &:hover p {
+      display: block;
+    }
   }
 }
-.challenge-container:hover + div p {
-    display: block;
-  }
-
-
-
-h2{
-    font-size:$f-s-54 ; 
-    font-weight:$bold ;
-    color:$primary-red ;
-}
-// .background {
-//   width: 100%;
-//   height: 100%;
-//   background: linear-gradient(
-//     to top left,
-//     #120b35 0%,
-//     rgba(76, 0, 255, 1) 50%,
-//     #120b35 100%
-//   );
-
-// }
