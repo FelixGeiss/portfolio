@@ -8,9 +8,7 @@
 }
 
 .main-container {
-  @include flex-center($fd: column);
-  margin-left: $gap-105;
-  margin-right: $gap-105;
+  @include flex-center($fd: column);;
   width: 100%;
 
   h2 {

@@ -9,14 +9,12 @@
 .main-container {
   @include flex-center($jc: space-between,$ai: normal);
   width: 100%;
-  margin-right: $gap-105;
-  margin-left: $gap-105;
   max-width: $max-width;
   height: 100%;
 }
 .about-right {
   @include flex-center($fd: column, $ai: flex-end, $jc: space-between);
-  max-width:60%;
+  max-width:67%;
 
 
   > div {
@@ -116,7 +114,7 @@
   }
   h3 {
     font-weight: $bold;
-    margin-right: $gap-40;
+    margin-right: 1%;
   }
 
   p {
@@ -128,7 +126,7 @@
 }
 
 .abot-left {
-  width: 33.6875rem;
+  width: 20rem;
   min-width: 157.41px;
   overflow: hidden; 
 

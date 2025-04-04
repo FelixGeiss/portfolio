@@ -7,6 +7,7 @@ html {
   transition: all 125ms ease-out;
 }
 
+
 // color
 
 $backround-blue: #120b35;
@@ -56,7 +57,7 @@ $bold: 700;
 }
 
 //   Layout-Variablen
-$gap-170:10.625rem;
+$gap-170: 10.625rem;
 $gap-105: 6.56rem;
 $gap-100: 6.25rem;
 $gap-64: 4rem;
@@ -70,21 +71,19 @@ $gap-10: 0.625rem;
 $gap-8: 0.5rem;
 $gap-2: 0.125rem;
 
-$img-w-490 :30.625rem;
-$img-w-32:2rem;
-$img-w-30:1.875rem;
-$img-w-35:2.1875rem;
-$img-w-54:3.375rem;
-$img-w-27:1.6875rem;
-$img-w-19:1.1875rem;
+$img-w-490: 30.625rem;
+$img-w-32: 2rem;
+$img-w-30: 1.875rem;
+$img-w-35: 2.1875rem;
+$img-w-54: 3.375rem;
+$img-w-27: 1.6875rem;
+$img-w-19: 1.1875rem;
 $img-w-22: 1.375rem;
 
-
-$img-h-70:4.375rem;
-$img-h-50:3.125rem;
-$img-h-8:0.5rem;
+$img-h-70: 4.375rem;
+$img-h-50: 3.125rem;
+$img-h-8: 0.5rem;
 $img-h-60: 3.75rem;
-
 
 // font Size
 $f-s-82: 5.125rem;
@@ -130,6 +129,11 @@ body {
   background-color: $backround-blue;
   width: 100%;
   height: 100%;
+}
+
+main{
+  margin: 0 $gap-105;
+
 }
 
 a {

@@ -14,8 +14,6 @@ header {
   gap: $gap-100;
   width: 100%;
   height: 100%;
- margin: 0 $gap-105;
-
 }
 
 .hero-left {
@@ -69,7 +67,7 @@ button {
 }
 
 .img-container {
-  width: 33.6875rem;
+  width:20rem;
   overflow: hidden; // Überschüssiger Inhalt wird verborgen
 
   img {

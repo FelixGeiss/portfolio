@@ -1,0 +1,29 @@
+@import "../../mixin.scss";
+@import "../../styles.scss";
+
+
+
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Füge align-items: flex-start hinzu, um die Elemente oben auszurichten */
+  width: auto; /* Breite an Inhalt anpassen */
+  height: auto; /* Höhe an Inhalt anpassen */
+}
+
+.image-container {
+  width: auto; /* Breite an Bild anpassen */
+  height: auto; /* Höhe an Bild anpassen */
+  flex-shrink: 0; /* Verhindert, dass image-container schrumpft */
+}
+
+.image-container img {
+  display: block; /* Verhindert unerwünschte Abstände unter dem Bild */
+  width: 100%; /* Bild nimmt die volle Breite des image-container ein */
+  height: auto; /* Höhe des Bildes wird proportional angepasst */
+}
+
+.text-container {
+  width: 50%; /* oder eine andere Breite, je nach Bedarf */
+}
+
