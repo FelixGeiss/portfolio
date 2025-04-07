@@ -10,6 +10,7 @@
 .main-container {
   @include flex-center($fd: column);;
   width: 100%;
+  max-width:$max-width;
 
   h2 {
     width: 100%;

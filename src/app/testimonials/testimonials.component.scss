@@ -1,0 +1,46 @@
+@import "../../mixin.scss";
+@import "../../styles.scss";
+
+.main-container {
+  @include flex-center($fd: column, $ai: stretch);
+  max-width: $max-width;
+
+  > div {
+    @include flex-center($jc: space-between, $ai:stretch);
+    width: 100%;
+  
+ 
+    > div:first-child {
+      @include flex-center();
+    }
+  }
+  img {
+    width: $img-w-82;
+  }
+}
+
+.text-container {
+  padding: 0px 0.875rem;
+}
+
+h4 {
+  font-family: $font-primary;
+  font-size: $f-s-24;
+  color: $primary-red;
+  font-weight: $bold;
+  white-space: nowrap;
+}
+h5 {
+  font-family: $font-primary;
+  font-size: $f-s-18;
+  color: $turquoise;
+  font-weight: $regular;
+  margin-bottom: $gap-32;
+}
+
+p {
+  font-family: $font-primary;
+  font-size: $f-s-18;
+  color: $turquoise;
+  font-weight: $regular;
+}

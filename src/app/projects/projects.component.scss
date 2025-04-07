@@ -3,27 +3,76 @@
 
 
 
+:host {
+  @include flex-center();
+}
+
 .project-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* Füge align-items: flex-start hinzu, um die Elemente oben auszurichten */
-  width: auto; /* Breite an Inhalt anpassen */
-  height: auto; /* Höhe an Inhalt anpassen */
+  @include flex-center($jc: space-between, $ai: flex-start);
+  gap: $gap-24;
+  width: auto;
+  height: auto;
 }
 
 .image-container {
-  width: auto; /* Breite an Bild anpassen */
-  height: auto; /* Höhe an Bild anpassen */
-  flex-shrink: 0; /* Verhindert, dass image-container schrumpft */
+  width: auto; 
+  height: auto; 
+  width: 36.75rem;
 }
 
 .image-container img {
-  display: block; /* Verhindert unerwünschte Abstände unter dem Bild */
-  width: 100%; /* Bild nimmt die volle Breite des image-container ein */
-  height: auto; /* Höhe des Bildes wird proportional angepasst */
+  display: block;
+  width: 100%; 
+  height: auto; 
 }
 
 .text-container {
-  width: 50%; /* oder eine andere Breite, je nach Bedarf */
+  width: 50%; 
 }
 
+h3 {
+  font-family: $font-primary;
+  color: $turquoise;
+  font-weight: $bold;
+  font-size: $f-s-48;
+  margin-bottom:$gap-32 ;
+}
+
+h5{
+  font-family: $font-primary;
+  color: $turquoise;
+  font-weight: $regular;
+  font-size: $f-s-18; 
+  margin-bottom:$gap-32 ;
+}
+
+.links {
+  @include flex-center($jc: flex-start); /* Behält deinen Mixin bei */
+
+  a {
+    /* Standard-Stile für alle Links (falls vorhanden) */
+    font-family: $font-primary;
+    font-weight: $regular;
+    font-size: $f-s-18;
+    padding: $padding-15 $padding-30;
+  }
+
+  a:first-child {
+    color: $primary-red;
+    border: solid 1px $turquoise;
+
+    &:hover{
+      color:$turquoise ; 
+    }
+  }
+
+  a:nth-child(2) {
+    margin-left: $gap-10;
+   background-color:$turquoise ;
+   color:$backround-blue ;
+   &:hover{
+    color:$primary-red ; 
+  }
+    
+  }
+}

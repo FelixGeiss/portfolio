@@ -5,8 +5,14 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  isChecked: boolean = false;
 
+  isCheckt(event: Event) {
+    const target = event.target as HTMLInputElement;
+    this.isChecked = target.checked;
+    console.log(this.isChecked);
+  }
 }
