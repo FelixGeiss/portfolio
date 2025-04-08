@@ -1,6 +1,11 @@
 @import "../../mixin.scss";
 @import "../../styles.scss";
 
+:host {
+  @include flex-center($fd:column);
+
+}
+
 .main-container {
   @include flex-center($fd: column, $ai: stretch);
   max-width: $max-width;
