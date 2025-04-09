@@ -3,7 +3,7 @@
 
 :host {
   @include flex-center($fd:column);
-
+max-width: $max-width;
 
 }
 .form-container{
@@ -32,15 +32,15 @@
   }
 }
 
-/* Formular */
+
 form {
  
   display: flex;
-  flex-wrap: wrap; /* Für Responsive-Verhalten */
+  flex-wrap: wrap; 
   padding: 2rem 0;
   position: relative;
 
-  /* Linke Spalte */
+
   .form-left {
     @include flex-center($fd: column, $ai: flex-start, $jc: space-between);
     flex: 1 1;
@@ -55,13 +55,12 @@ form {
     }
   }
 
-  /* Rechte Spalte */
   .form-right {
     flex: 1 1;
     @include flex-center($fd: column, $ai: flex-start);
     margin-left: 1rem;
 
-    /* Links zu Mail und Telefon */
+
     a {
       font-family: $font-primary;
       font-weight: $medium;
@@ -98,7 +97,7 @@ form {
     }
   }
 
-  /* Textarea für Nachricht */
+
   textarea {
     width: 100%;
     height: 9rem;

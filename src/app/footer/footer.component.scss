@@ -1,0 +1,95 @@
+@import "../../mixin.scss";
+@import "../../styles.scss";
+
+:host {
+  @include flex-center($jc: space-between);
+  width: 100%;
+  height:12.25rem;
+  max-width:$max-width ;
+}
+
+.middle-container{
+  @include flex-center($fd: column);
+  
+  >span{
+    color: $primary-red;
+    font-family: $font-primary;
+    font-weight: $regular;
+    font-size: $f-s-24;
+  }
+  
+  >div{
+    @include flex-center($jc: space-between);
+    width: 100%;
+    
+    a{
+      color: $primary-red;
+      font-family: $font-primary;
+      font-weight: $regular;
+      font-size: $f-s-14;
+      
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+
+.logo {
+  @include flex-center($fd:column, $jc:flex-start);
+  height: 100%;
+  color: $primary-red;
+  font-family:$font-logo;
+  font-weight: $bold;
+  font-size: $f-s-54;
+p{
+  color: $primary-red;
+  font-family:$font-primary;
+  font-weight: $bold;
+  font-size: $f-s-12;
+}
+}
+
+.git-hup {
+  background-image: url("../../assets/img/github.svg");
+  width: 1.875rem;
+  height: 1.875rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &:hover {
+    background-image: url("../../assets/img/github-hover.svg");
+  }
+}
+
+.email {
+  background-image: url("../../assets/img/email.svg");
+  width: 1.875rem;
+  height: 1.875rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &:hover {
+    background-image: url("../../assets/img/email-hover.svg");
+  }
+}
+
+.linkedin {
+  background-image: url("../../assets/img/linkedin.svg");
+  width: 1.875rem;
+  height: 1.875rem;;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &:hover {
+    background-image: url("../../assets/img/linkedin-hover.svg");
+  }
+}
+
+.icon-container{
+  @include flex-center();
+  height: 100%;
+  gap: $gap-24;
+}
