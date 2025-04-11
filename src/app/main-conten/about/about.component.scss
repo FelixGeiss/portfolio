@@ -1,0 +1,184 @@
+@import "../../../mixin.scss";
+@import "../../../styles.scss";
+
+:host {
+  @include flex-center($ai: normal);
+  width: 100%;
+  height: 100%;
+}
+.main-container {
+  @include flex-center($jc: space-between, $ai: normal);
+  width: 100%;
+  max-width: $max-width;
+  height: 100%;
+}
+.about-right {
+  @include flex-center($fd: column, $ai: flex-end, $jc: space-between);
+  width: 70%;
+  >div:nth-child(2){
+ >div{
+  margin-bottom: 1rem;
+ }
+  }
+
+  h2 {
+    text-align: right;
+    font-family: $font-primary;
+    font-weight: $medium;
+    font-size: $f-s-54;
+    line-height: 1.2;
+    color: $primary-red;
+    margin-bottom: $gap-24;
+  }
+
+  h3 {
+    font-family: $font-primary;
+    font-weight: $medium;
+    font-size: $f-s-54;
+    line-height: 1.2;
+    color: $primary-red;
+    font-weight: $bold;
+    position: absolute;
+    left: 0;
+  }
+
+  p {
+    font-family: $font-primary;
+    text-align: right;
+    font-weight: $regular;
+    color: $turquoise;
+  }
+  a {
+    display: inline-block;
+    padding: 0.9375rem 1.875rem;
+    font-weight: $medium;
+    font-size: $f-s-18;
+    font-family: $font-primary;
+    background-color: $turquoise;
+    color: $backround-blue;
+  }
+
+  a:hover {
+    color: $primary-red;
+  }
+}
+
+.icon-container {
+  width: 85%;
+  position: relative;
+  > div {
+    @include flex-center();
+    width: 100%;
+
+    > div {
+      @include flex-center();
+    }
+  }
+
+  .locaishen-container {
+    width: 10.4765625rem;
+    position: relative;
+    p {
+      margin-left: 1rem;
+      text-align: left;
+    }
+    img:nth-child(1) {
+      width: 2rem;
+    }
+    > div {
+      @include flex-center($fd: column);
+     height:3rem;
+    }
+
+    &:hover .elipse {
+      display: flex;
+    }
+  }
+
+  .elipse {
+    @include flex-center();
+    display: none;
+    background-image: url("../../../assets/img/locaishen-ellipse.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: $img-w-19;
+    height: $img-h-8;
+  }
+
+  .suitcase-container {
+    margin-left: 21.476563rem;
+    position: relative;
+    p {
+      text-align: left;
+    }
+    img:nth-child(2) {
+      transition: transform 0.3s ease;
+      width: 2rem;
+      margin-right: 1rem;
+
+    }
+      &:hover img:nth-child(2) {
+        transform: rotate(6deg);
+      }
+    .arrow-curve-left {
+      position: absolute;
+      left: -13rem;
+      top: 0;
+      width: 1.875rem;
+      height: 3.5rem;
+    }
+  }
+
+  .laptop {
+    position: relative;
+    p {
+      text-align: left;
+    }
+
+    > img:nth-child(1) {
+      width: 3.34875rem;
+      margin-right: 1rem;
+    }
+
+    > img:nth-child(2) {
+      display: none;
+      pointer-events: none;
+    }
+
+    &:hover > img:nth-child(2) {
+      display: block;
+    }
+
+    .signal {
+      position: absolute;
+      right: 86%;
+      top: 1%;
+      width: 1.5625rem;
+    }
+  }
+
+  .arrow-curve-right {
+    position: absolute;
+    right: -3.125rem;
+    width: 1.875rem;
+  }
+}
+.arrow-curly {
+  height: $img-h-60;
+  position: absolute;
+  right: 0;
+  width: 1.875rem;
+}
+
+.abot-left {
+  .img-container {
+    width: 20rem;
+    min-width: 157.41px;
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

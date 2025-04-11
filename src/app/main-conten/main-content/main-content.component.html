@@ -1,0 +1,12 @@
+<app-hero></app-hero>
+<app-about></app-about>
+<app-skills></app-skills>
+
+<h2>My Projects</h2>
+
+<ng-container *ngFor="let project of projects; let i = index">
+  <app-projects [project]="project" [isRowReverse]="i % 2 === 1"></app-projects>
+</ng-container>
+
+<app-testimonials></app-testimonials>
+<app-contact></app-contact>

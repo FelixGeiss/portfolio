@@ -1,10 +1,25 @@
-@import "../../mixin.scss";
-@import "../../styles.scss";
+@import "../../../mixin.scss";
+@import "../../../styles.scss";
 
 :host {
   @include flex-center($fd:column);
 max-width: $max-width;
 
+}
+
+.header-contact{
+  @include flex-center($jc:flex-start,$ai:flex-end);
+  width: 100%;
+  >img{
+    width:5rem ;
+    margin-left: 1rem;
+  }
+  > h2 {
+    font-family: $font-primary;
+    font-weight: $medium;
+    font-size: $f-s-54;
+    color: $primary-red;
+  }
 }
 .form-container{
   width: 100%;
@@ -14,15 +29,6 @@ max-width: $max-width;
   @include flex-center($jc: flex-start, $ai: flex-end);
   margin: 2rem 0;
 
-
-
-
-  > h2 {
-    font-family: $font-primary;
-    font-weight: $medium;
-    font-size: $f-s-54;
-    color: $primary-red;
-  }
 
   .arrow {
     margin-left: 2rem;
@@ -57,7 +63,7 @@ form {
 
   .form-right {
     flex: 1 1;
-    @include flex-center($fd: column, $ai: flex-start);
+    @include flex-center($fd: column, $ai: flex-start,$jc:flex-end);
     margin-left: 1rem;
 
 
@@ -70,27 +76,27 @@ form {
 
       .letter {
         margin-right: 0.5rem;
-        width: 1.48rem; // entspricht ca. 23.67px
-        height: 1.25rem; // entspricht ca. 20px
-        background: url("../../assets/img/letter.svg") center center / contain
+        width: 1.48rem; 
+        height: 1.25rem; 
+        background: url("../../../assets/img/letter.svg") center center / contain
           no-repeat;
       }
 
       .phone {
         margin-right: 0.5rem;
-        width: 1.78rem; // entspricht ca. 28.4px
-        height: 1.45rem; // entspricht ca. 23.2px
-        background: url("../../assets/img/phone.svg") center center / contain
+        width: 1.78rem; 
+        height: 1.45rem; 
+        background: url("../../../assets/img/phone.svg") center center / contain
           no-repeat;
       }
 
       &:hover {
         .letter {
-          background: url("../../assets/img/letter-hover.svg") center center /
+          background: url("../../../assets/img/letter-hover.svg") center center /
             contain no-repeat;
         }
         .phone {
-          background: url("../../assets/img/phone-hover.svg") center center /
+          background: url("../../../assets/img/phone-hover.svg") center center /
             contain no-repeat;
         }
       }
