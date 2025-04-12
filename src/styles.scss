@@ -21,6 +21,8 @@ $regular: 400;
 $medium: 500;
 $bold: 700;
 
+$l-height:120%;
+
 @font-face {
   font-family: "handjet";
   src: url("/assets/fonts/Handjet-Bold.ttf") format("truetype");
@@ -112,25 +114,7 @@ $align-stretch: stretch;
 $grow-1: 1;
 $nowrap: nowrap;
 
-$flex-row-center: (
-  display: flex,
-  flex-direction: row,
-  justify-content: center,
-  align-items: center,
-);
 
-$flex-column-center: (
-  display: flex,
-  flex-direction: column,
-  justify-content: center,
-  align-items: center,
-);
-
-$flex-between: (
-  display: flex,
-  justify-content: space-between,
-  align-items: center,
-);
 
 body {
   margin: 0;

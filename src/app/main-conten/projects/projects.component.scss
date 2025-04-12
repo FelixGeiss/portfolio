@@ -31,30 +31,23 @@
   width: 50%; 
 }
 
+
+
 h3 {
-  font-family: $font-primary;
-  color: $turquoise;
-  font-weight: $bold;
-  font-size: $f-s-48;
+  @include fonts($fc:$turquoise,$fw:$bold,$fs:$f-s-48);
   margin-bottom:$gap-32 ;
 }
 
 h5{
-  font-family: $font-primary;
-  color: $turquoise;
-  font-weight: $regular;
-  font-size: $f-s-18; 
+  @include fonts($fc:$turquoise,$fs:$f-s-18);
   margin-bottom:$gap-32 ;
 }
 
 .links {
-  @include flex-center($jc: flex-start); /* Behält deinen Mixin bei */
+  @include flex-center($jc: flex-start); 
 
   a {
-    /* Standard-Stile für alle Links (falls vorhanden) */
-    font-family: $font-primary;
-    font-weight: $regular;
-    font-size: $f-s-18;
+    @include fonts($fc:$turquoise,$fs:$f-s-18);
     padding: $padding-15 $padding-30;
   }
 

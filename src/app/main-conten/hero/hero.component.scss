@@ -63,11 +63,8 @@ header {
 
 
 a{
+  @include fonts($fs:$f-s-18);
   display: inline-block;
-  color: $primary-red;
-  font-family: $font-primary;
-  font-weight: $medium;
-  font-size: $f-s-18;
   border: 1px solid $turquoise;
   padding: 0.625rem 0.9375rem;
   transform: rotate(-90deg);
@@ -92,20 +89,10 @@ a{
 }
 
 
-
-h1,
-h2 {
-  color: $turquoise;
-  font-family: $font-primary;
-  font-weight: $medium;
-  line-height: 1.2;
+h1{
+  @include fonts($fs:$f-s-82,$fc:$turquoise);
+}
+h2{
+  @include fonts($fc:$turquoise);
   white-space: nowrap;
-}
-
-h2 {
-  font-size: $f-s-54;
-}
-
-h1 {
-  font-size: $f-s-82;
 }

@@ -1,8 +1,17 @@
-@mixin flex-center($jc: center, $ai:center ,$gp:0px ,$fd:row) {
-    display: flex;
-    justify-content: $jc;
-    align-items: $ai;
-    gap:$gp;
-    flex-direction: $fd;
-  }
 
+
+@mixin flex-center($jc: center, $ai: center, $gp: 0px, $fd: row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gp;
+  flex-direction: $fd;
+}
+
+@mixin fonts($ff: $font-primary, $fc: $primary-red, $fw: $medium,$fs:$f-s-54,$lh:$l-height) {
+  font-size:$fs;
+  font-weight: $fw;
+  font-family: $ff;
+  line-height: $lh;
+  color: $fc;
+}

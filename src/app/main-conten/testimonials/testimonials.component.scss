@@ -29,23 +29,14 @@
 }
 
 h4 {
-  font-family: $font-primary;
-  font-size: $f-s-24;
-  color: $primary-red;
-  font-weight: $bold;
+  @include fonts($fw:$bold,$fs:$f-s-24);
   white-space: nowrap;
 }
 h5 {
-  font-family: $font-primary;
-  font-size: $f-s-18;
-  color: $turquoise;
-  font-weight: $regular;
+  @include fonts($fs:$f-s-18,$fc:$turquoise);
   margin-bottom: $gap-32;
 }
 
 p {
-  font-family: $font-primary;
-  font-size: $f-s-18;
-  color: $turquoise;
-  font-weight: $regular;
+  @include fonts($fs:$f-s-18,$fc:$turquoise);
 }

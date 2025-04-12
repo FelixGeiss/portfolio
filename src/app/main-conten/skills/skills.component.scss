@@ -8,16 +8,14 @@
 }
 
 .main-container {
-  @include flex-center($fd: column);;
+  @include flex-center($fd: column);
   width: 100%;
-  max-width:$max-width;
+  max-width: $max-width;
 
   h2 {
+    @include fonts($fw: $bold);
     width: 100%;
     text-align: left;
-    font-size: $f-s-54;
-    font-weight: $bold;
-    color: $primary-red;
   }
 }
 
@@ -30,35 +28,29 @@
 
   > div {
     @include flex-center($fd: column);
-    width: 6.75rem; 
+    width: 6.75rem;
 
     img {
       width: 3.75rem;
     }
 
     h6 {
-      font-size: $f-s-18;
-      font-family: $font-primary;
-      color: $turquoise;
-      font-weight: $bold;
+      @include fonts($fw: $bold, $fc: $turquoise, $fs: $f-s-18);
       text-align: center;
     }
   }
 
   .challenge-container {
-    display: flex; 
-    align-items: center; 
-    gap: $gap-16; 
+    display: flex;
+    align-items: center;
+    gap: $gap-16;
     position: relative;
 
     p {
+      @include fonts($fw: $bold, $fc: $turquoise, $fs: $f-s-18);
       position: absolute;
       left: 123%;
       text-align: left;
-      font-size: $f-s-18;
-      font-family: $font-primary;
-      color: $turquoise;
-      font-weight: $regular;
       width: 17.25rem;
       display: none;
     }

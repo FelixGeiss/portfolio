@@ -1,3 +1,4 @@
+
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
 
@@ -19,22 +20,17 @@
 
 nav {
   @include flex-center($jc: space-between);
-
+  @include fonts($fs:$f-s-22);
   max-width: $max-width;
   width: 100%;
   margin: $gap-24 $gap-105;
   white-space: nowrap;
-  color: $primary-red;
-  font-family: $font-primary;
-  font-weight: $medium;
-  font-size: $f-s-22;
+ 
 
   > ul {
     @include flex-center($gp: $gap-48);
     > li:first-child {
-      font-size: $f-s-48;
-      font-family: $font-logo;
-      font-weight: $bold;
+      @include fonts($fs:$f-s-48,$ff:$font-logo,$fw:$bold);
     }
 
     > li:not(:first-child) {
@@ -48,9 +44,7 @@ nav {
 
 span{
     @include flex-center();
-    font-family: $font-primary;
-    font-weight: $medium;
-    font-size: $f-s-22;
+    @include fonts($fs:$f-s-22);
     p {
         margin: 0;
         &:hover {
