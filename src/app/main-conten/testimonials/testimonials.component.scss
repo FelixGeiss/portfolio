@@ -34,6 +34,7 @@
 h4 {
   @include fonts($fw:$bold,$fs:$f-s-24);
   white-space: nowrap;
+  margin-bottom: 1.5rem;
 }
 h5 {
   @include fonts($fs:$f-s-18,$fc:$turquoise);

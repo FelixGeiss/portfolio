@@ -4,8 +4,9 @@
 :host {
   @include flex-center($jc: flex-start);
   width: 100%;
-  height: calc(100vh - 196px);
+  height: calc(100vh - 12.25rem - 4.412125rem);
   max-width: $max-width;
+  margin-top: 4.412125rem
 }
 
 .imprintContainer {

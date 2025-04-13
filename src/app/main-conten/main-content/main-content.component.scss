@@ -1,7 +1,15 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
 
+
+
+
+#hero, #about, #skills, #projects, #testimonials {
+    margin-bottom: 3.125rem;
+}
+
 h2{
-    @include fonts($fw: $bold);
+    @include fonts();
+    margin-bottom: 1.5rem;
     
 }
