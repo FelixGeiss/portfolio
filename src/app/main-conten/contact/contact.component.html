@@ -1,19 +1,15 @@
-
-
 <div class="header-contact">
-<h2>Contact me</h2>
-<img src="assets/img/arrow-down.svg" alt="">
+  <h2>Contact me</h2>
+  <img src="assets/img/arrow-down.svg" alt="" />
 </div>
-
-
 
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <div class="form-left">
     <p>
-      Encourage people to contact you and describe what role you are interested in.
-      Express interest in contributing to a new project.
+      Encourage people to contact you and describe what role you are interested
+      in. Express interest in contributing to a new project.
     </p>
-  
+
     <div class="input-wrapper">
       <input
         type="text"
@@ -23,8 +19,11 @@
             ? 'Your name is required'
             : 'Your Name'
         "
-        [ngClass]="{'error': contactForm.get('name')?.touched && contactForm.get('name')?.invalid}"
-        style="padding-right: 3rem;"
+        [ngClass]="{
+          error:
+            contactForm.get('name')?.touched && contactForm.get('name')?.invalid
+        }"
+        style="padding-right: 3rem"
       />
       <img
         *ngIf="contactForm.get('name')?.touched"
@@ -37,7 +36,7 @@
         class="validation-icon"
       />
     </div>
-   
+
     <div class="input-wrapper">
       <input
         type="email"
@@ -47,8 +46,12 @@
             ? 'Your email is required'
             : 'Your Email'
         "
-        [ngClass]="{'error': contactForm.get('email')?.touched && contactForm.get('email')?.invalid}"
-        style="padding-right: 3rem;"
+        [ngClass]="{
+          error:
+            contactForm.get('email')?.touched &&
+            contactForm.get('email')?.invalid
+        }"
+        style="padding-right: 3rem"
       />
       <img
         *ngIf="contactForm.get('email')?.touched"
@@ -64,25 +67,37 @@
   </div>
 
   <div class="form-right">
-    <a href="mailto:geissq@gmail.com.com">
-      <div class="letter"></div>
-      <span>E-mail: geissq&#64;gmail.com</span>
-    </a>
-    <a href="tel:015222492773">
-      <div class="phone"></div>
-      <span>Tel: 0152 224 927 73</span>
-    </a>
+    <div>
+      <div>
+        <a href="mailto:geissq@gmail.com.com">
+          <div class="letter"></div>
+          <span>E-mail: geissq&#64;gmail.com</span>
+        </a>
+        <a href="tel:015222492773">
+          <div class="phone"></div>
+          <span>Tel: 0152 224 927 73</span>
+        </a>
+      </div>
 
+      <div class="arrow-container">
+        <a class="icon" href="#"></a>
+      </div>
+    </div>
     <div class="input-wrapper">
       <textarea
         formControlName="message"
         [placeholder]="
-          contactForm.get('message')?.touched && contactForm.get('message')?.invalid
+          contactForm.get('message')?.touched &&
+          contactForm.get('message')?.invalid
             ? 'Your message is required'
             : 'Your Message'
         "
-        [ngClass]="{'error': contactForm.get('message')?.touched && contactForm.get('message')?.invalid}"
-        style="padding-right: 3rem;"
+        [ngClass]="{
+          error:
+            contactForm.get('message')?.touched &&
+            contactForm.get('message')?.invalid
+        }"
+        style="padding-right: 3rem"
       ></textarea>
       <img
         *ngIf="contactForm.get('message')?.touched"
@@ -99,9 +114,12 @@
 
   <label class="privacy">
     <input type="checkbox" (change)="isCheckt($event)" />
-    I've read the <a href="privacy-policy">privacy policy</a> and agree to the processing of my data as outlined.
+    I've read the <a href="privacy-policy">privacy policy</a> and agree to the
+    processing of my data as outlined.
   </label>
   <div class="button-container">
-    <button type="submit" [disabled]="!isChecked || contactForm.invalid">Senden</button>
+    <button type="submit" [disabled]="!isChecked || contactForm.invalid">
+      Senden
+    </button>
   </div>
 </form>

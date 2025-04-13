@@ -1,7 +1,9 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
 
-
+* {
+  transition: all 125ms ease-out;
+}
 :host {
   @include flex-center();
 
@@ -48,7 +50,7 @@ h5{
 
   a {
     @include fonts($fc:$turquoise,$fs:$f-s-18);
-    padding: $padding-15 $padding-30;
+    padding: 0.9375rem 1.875rem;
   }
 
   a:first-child {

@@ -1,5 +1,6 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
+
 :host {
   @include flex-center();
   width: 100%;
@@ -30,22 +31,22 @@ header {
     > div:nth-child(2) {
       height: 100%;
       @include flex-center($ai: flex-end);
-      
+
       > .icon {
-        width: 1.375rem;           
-        height: 3.125rem;         
-        padding: 0.625rem;        
+        width: 1.375rem;
+        height: 3.125rem;
+        padding: 0.625rem;
         background-image: url("../../../assets/img/arrow up .svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        background-origin: content-box; 
+        background-origin: content-box;
         transform: scaleY(-1);
         transition: all 125ms ease-out;
-        border: 0.0625rem solid transparent; 
-     
+        border: 0.0625rem solid transparent;
+
         &:hover {
-          border-color: $turquoise;           
+          border-color: $turquoise;
           background-image: url("../../../assets/img/arrow-up-hover.svg");
           background-size: contain;
           background-origin: content-box;
@@ -59,40 +60,35 @@ header {
   }
 }
 
-
-
-
-a{
-  @include fonts($fs:$f-s-18);
+a {
+  @include fonts($fs: $f-s-18);
   display: inline-block;
   border: 1px solid $turquoise;
   padding: 0.625rem 0.9375rem;
   transform: rotate(-90deg);
   text-decoration: none;
-  
+
   &:hover {
     color: $turquoise;
   }
 }
 
-
 .img-container {
-  width:20rem;
-  overflow: hidden; 
+  width: 20rem;
+  overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    object-position: top; 
+    object-fit: cover;
+    object-position: top;
   }
 }
 
-
-h1{
-  @include fonts($fs:$f-s-82,$fc:$turquoise);
+h1 {
+  @include fonts($fs: $f-s-82, $fc: $turquoise);
 }
-h2{
-  @include fonts($fc:$turquoise);
+h2 {
+  @include fonts($fc: $turquoise);
   white-space: nowrap;
 }

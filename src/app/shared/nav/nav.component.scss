@@ -2,6 +2,8 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
 
+*{transition: all 125ms ease-out;}
+
 :host {
   @include flex-center();
   position: fixed;
@@ -12,7 +14,6 @@
     #120b35 0%,
     #120b35 60%,
     rgba(18, 11, 53, 0) 124%
-  
   );
 
   top: 0;
@@ -49,6 +50,7 @@ span{
         margin: 0;
         &:hover {
           color: $turquoise;
+          cursor: pointer;
         }
       }
 }

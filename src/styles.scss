@@ -3,9 +3,6 @@ html {
   width: 100%;
 }
 
-* {
-  transition: all 125ms ease-out;
-}
 
 // color
 
@@ -59,10 +56,6 @@ $l-height:120%;
 
 //   Layout-Variablen
 
-$padding-15: 0.9375rem;
-$padding-30: 1.875rem;
-
-$padding-62: 3.875rem;
 
 $gap-170: 10.625rem;
 $gap-105: 6.56rem;
@@ -141,6 +134,13 @@ main {
   }
 }
 
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 $gap-105;
+}
+
 a {
   all: unset;
   cursor: pointer;
@@ -188,7 +188,7 @@ p {
 }
 @media (max-width: 768px) {
   html {
-    font-size: 9px;
+    font-size: 8px;
   }
 }
 // @media (max-width: 576px) {

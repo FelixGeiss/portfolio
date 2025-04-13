@@ -1,0 +1,7 @@
+@import "../../../mixin.scss";
+@import "../../../styles.scss";
+
+h2{
+    @include fonts($fw: $bold);
+    
+}
