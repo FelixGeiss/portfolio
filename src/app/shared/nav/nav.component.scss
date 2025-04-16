@@ -54,3 +54,83 @@ span{
         }
       }
 }
+
+
+/* Container-Element */
+.burger-menu {
+  position: relative;
+}
+
+/* Button-Styling */
+.burger-menu button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+/* Styling der Burger-Linien */
+.burger-menu button span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background:$primary-red;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Transformation, wenn das Menü geöffnet ist */
+/* Obere Linie dreht sich */
+.burger-menu.open button span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+/* Mittlere Linie wird ausgeblendet */
+.burger-menu.open button span:nth-child(2) {
+  opacity: 0;
+}
+
+/* Untere Linie dreht sich */
+.burger-menu.open button span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Stil des Dropdown-Menüs */
+.burger-menu ul {
+ 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 38px;
+  right: -92px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  
+}
+
+/* Listeneinträge */
+.burger-menu ul li {
+  padding: 10px 20px;
+}
+
+/* Links */
+.burger-menu ul li a {
+  text-decoration: none;
+  @include fonts($fs:$f-s-22);
+  display: block;
+}
+
+/* Optional: Hover-Effekt */
+.burger-menu ul li a:hover {
+  background-color: #f0f0f0;
+}
+.logo-mobile{
+  @include fonts($fs:$f-s-48,$ff:$font-logo,$fw:$bold);
+}

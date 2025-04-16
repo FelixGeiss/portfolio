@@ -246,6 +246,39 @@ form {
   }
 }
 
+.mail-tel-mobile {
+  @include flex-center();
+  @include fonts($fc: $turquoise, $fs: $f-s-20);
+  text-align: center;
+  display: none;
+
+  a {
+    @include flex-center($fd: column);
+
+    .letter {
+      margin-right: 0.5rem;
+      width: 1.48rem;
+      height: 1.25rem;
+      background: url("../../../assets/img/letter.svg") center center / contain no-repeat;
+    }
+
+    .phone {
+      margin-right: 0.5rem;
+      width: 1.78rem;
+      height: 1.45rem;
+      background: url("../../../assets/img/phone.svg") center center / contain no-repeat;
+    }
+
+    &:hover {
+      .letter {
+        background: url("../../../assets/img/letter-hover.svg") center center / contain no-repeat;
+      }
+      .phone {
+        background: url("../../../assets/img/phone-hover.svg") center center / contain no-repeat;
+      }
+    }
+  }
+}
 
 .input-wrapper {
   margin-top: 1rem;

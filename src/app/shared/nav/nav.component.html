@@ -1,14 +1,36 @@
 <nav>
-  <ul>
+  <ul class="display-none">
     <li><a href="#">&lt;FG&gt;</a></li>
     <li><a href="#about">Why me</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <span>
+  <span class="display-none">
     <p>DE</p>
     |
     <p>EN</p>
   </span>
+  <a class="show logo-mobile" href="#">&lt;FG&gt;</a>
+  <div class="burger-menu" [class.open]="menuOpen">
+    <button (click)="toggleMenu()">
+      <!-- Drei Spans repräsentieren die Burger-Linien -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Das Menü wird nur angezeigt, wenn menuOpen true ist -->
+    <ul *ngIf="menuOpen">
+      <li><a class="show" href="#about">Why me</a></li>
+      <li><a class="show" href="#skills">Skills</a></li>
+      <li><a class="show" href="#projects">Projects</a></li>
+      <li><a class="show" href="#contact">Contact</a></li>
+      <li>
+        <p>DE</p>
+        |
+        <p>EN</p>
+      </li>
+    </ul>
+  </div>
 </nav>

@@ -1,42 +1,42 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
-*{transition: all 125ms ease-out;}
+* {
+  transition: all 125ms ease-out;
+}
 :host {
   @include flex-center($jc: space-between);
   width: 100%;
-  height:12.25rem;
-  max-width:$max-width ;
+  height: 12.25rem;
+  max-width: $max-width;
 }
 
-.middle-container{
+.middle-container {
   @include flex-center($fd: column);
-  
-  >span{
-    @include fonts($fs:$f-s-24);
+
+  > span {
+    @include fonts($fs: $f-s-24);
   }
-  
-  >div{
+
+  > div {
     @include flex-center($jc: space-between);
     width: 100%;
-    
-    a{
-      @include fonts($fs:$f-s-14);
-      &:hover{
+
+    a {
+      @include fonts($fs: $f-s-14);
+      &:hover {
         text-decoration: underline;
       }
     }
   }
 }
 
-
-
 .logo {
-  @include flex-center($fd:column, $jc:flex-start);
-  @include fonts($ff:$font-logo,$fw:$bold,$lh:100%);
+  @include flex-center($fd: column, $jc: flex-start);
+  @include fonts($ff: $font-logo, $fw: $bold, $lh: 100%);
   height: 100%;
-p{
-  @include fonts($fw:$bold,$fs:$f-s-12);
-}
+  p {
+    @include fonts($fw: $bold, $fs: $f-s-12);
+  }
 }
 
 .git-hup {
@@ -66,7 +66,7 @@ p{
 .linkedin {
   background-image: url("../../../assets/img/linkedin.svg");
   width: 1.875rem;
-  height: 1.875rem;;
+  height: 1.875rem;
   background-repeat: no-repeat;
   background-size: contain;
 
@@ -75,8 +75,14 @@ p{
   }
 }
 
-.icon-container{
+.icon-container {
   @include flex-center();
   height: 100%;
   gap: $gap-24;
+}
+
+.middle-container-mobile {
+ display: none;
+  @include fonts($fs: $f-s-18);
+  text-align: center;
 }
