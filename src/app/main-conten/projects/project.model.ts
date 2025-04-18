@@ -1,7 +1,7 @@
 // project.model.ts
 export interface Project {
     title: string;
-    imageUrl: string;
+    videoUrl: string;
     technologies: string[];
     description: string;
     githubLink: string;

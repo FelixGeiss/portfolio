@@ -109,8 +109,12 @@ $nowrap: nowrap;
 body {
   margin: 0;
   box-sizing: border-box;
-  color: white;
-  background-color: $backround-blue;
+  background: #0b042d;
+  background: linear-gradient(
+    141deg,
+    rgba(11, 4, 45, 1) 0%,
+    rgba(31, 14, 114, 1) 100%
+  );
   width: 100%;
   height: 100%;
   display: flex;
@@ -238,7 +242,6 @@ p {
     flex-direction: column;
     width: 100% !important;
 
-
     > div:nth-child(1) {
       flex-direction: column;
     }
@@ -273,15 +276,15 @@ p {
     margin-left: 0 !important;
   }
 
-  .maobile-arrow-curve-left{
+  .maobile-arrow-curve-left {
     width: 100%;
-    justify-content: flex-start!important;
+    justify-content: flex-start !important;
   }
-  .maobile-arrow-curve-right{
+  .maobile-arrow-curve-right {
     display: flex;
     width: 100%;
     justify-content: flex-end;
-    >img{
+    > img {
       transform: scaleY(-1);
     }
   }
@@ -290,9 +293,15 @@ p {
     flex-direction: column !important;
     align-items: center !important;
   }
-
-  .text-container {
-    width: 100% !important;
+  app-testimonials{
+    overflow-x: scroll;
+    width: 97vw;
+  }
+ 
+  .text-container-testimonials{
+     width: 239px
+  }
+  .text-container { 
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -301,9 +310,10 @@ p {
     }
   }
 
-  .text-container-main {
-    // overflow-x: auto;
-    display: none !important;
+  .text-container-main {  
+    img {
+      display: none !important;
+    }
   }
 
   .header-contact {
@@ -319,10 +329,9 @@ p {
   .form-right {
     margin: 0 !important;
     flex-direction: column-reverse !important;
-
   }
-  .form-left{
-    p{
+  .form-left {
+    p {
       text-align: center;
     }
   }
@@ -335,22 +344,23 @@ p {
   app-footer {
     flex-direction: column-reverse;
   }
-  app-nav{
+  app-nav {
     justify-content: flex-end !important;
   }
-  .mail-tel{
+  .mail-tel {
     display: none !important;
   }
-  .show{
+  .show {
     display: flex !important;
   }
-  .display-none{
-    display: none!important;
-  }
-  .middle-container{
+  .display-none {
     display: none !important;
   }
-  .maobile-arrow-curve-left,.maobile-arrow-curve-right{
+  .middle-container {
+    display: none !important;
+  }
+  .maobile-arrow-curve-left,
+  .maobile-arrow-curve-right {
     display: flex !important;
   }
 }

@@ -30,15 +30,15 @@ export class MainContentComponent {
   projects: Project[] = [
     {
       title: 'Join',
-      imageUrl: 'assets/img/test-bild-join.png',
+      videoUrl: 'assets/Video/Aufzeichnung join.mp4',
       technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      githubLink: 'https://github.com/dein-benutzer/join',
-      liveTestLink: 'https://dein-benutzer.github.io/join/'
+      githubLink: 'https://github.com/NathalieDorendorf/join-406',
+      liveTestLink: 'http://join.felixgeiss.de/index.html'
     },
     {
       title: 'Sharkie',
-      imageUrl: 'assets/img/test-bild-join.png',
+      videoUrl: 'assets/img/test-bild-join.png',
       technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
       githubLink: 'https://github.com/dein-benutzer/sharkie',
@@ -46,11 +46,11 @@ export class MainContentComponent {
     },
     {
       title: 'Pollo Loco',
-      imageUrl: 'assets/img/test-bild-join.png',
+      videoUrl: 'assets/Video/Aufzeichnung el pollo loco.mp4',
       technologies: ['JavaScript', 'HTML', 'CSS'],
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tobacco salsa to fight against the crazy hen.',
-      githubLink: 'https://github.com/dein-benutzer/pollo-loco',
-      liveTestLink: 'https://dein-benutzer.github.io/pollo-loco/'
+      githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco',
+      liveTestLink: 'http://el-pollo-loco.felixgeiss.de/'
     }
   ];
 }

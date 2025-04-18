@@ -11,16 +11,15 @@
     |
     <p>EN</p>
   </span>
-  <a class="show logo-mobile" href="#">&lt;FG&gt;</a>
-  <div class="burger-menu" [class.open]="menuOpen">
-    <button (click)="toggleMenu()">
-      <!-- Drei Spans repräsentieren die Burger-Linien -->
+  <a class="show logo-mobile " href="#">&lt;FG&gt;</a>
+  <div class="burger-menu show" [class.open]="menuOpen">
+    <button class="show" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Das Menü wird nur angezeigt, wenn menuOpen true ist -->
+ 
     <ul *ngIf="menuOpen">
       <li><a class="show" href="#about">Why me</a></li>
       <li><a class="show" href="#skills">Skills</a></li>

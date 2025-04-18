@@ -10,7 +10,7 @@
 }
 
 .project-container {
-  @include flex-center($jc: space-between, $ai: flex-start);
+  @include flex-center($jc: space-between);
   gap: $gap-24;
   width: auto;
   height: auto;
@@ -19,12 +19,13 @@
 }
 
 .image-container {
+  position: relative;
   width: auto; 
   height: auto; 
   width: 36.75rem;
 }
 
-.image-container img {
+.image-container video {
   display: block;
   width: 100%; 
   height: auto; 
