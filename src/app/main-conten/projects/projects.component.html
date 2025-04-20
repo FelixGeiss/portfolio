@@ -17,10 +17,10 @@
       </video>
     </a>
   </div>
-  <div class="text-container">
+  <div class="text-container-project">
     <h3>{{ project.title }}</h3>
-    <h5 class="technologies">{{ project.technologies.join(" | ") }}</h5>
-    <h5 class="description">{{ project.description }}</h5>
+    <h5 class="technologies margin-R margin-L">{{ project.technologies.join(" | ") }}</h5>
+    <h5 class="description margin-R margin-L">{{ project.description }}</h5>
     <div class="links">
       <a [href]="project.githubLink" target="_blank">Github</a>
       <a [href]="project.liveTestLink" target="_blank">Live Test</a>

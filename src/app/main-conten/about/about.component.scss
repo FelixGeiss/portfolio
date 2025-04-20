@@ -85,8 +85,8 @@
     background-image: url("../../../assets/img/locaishen-ellipse.svg");
     background-size: cover;
     background-repeat: no-repeat;
-    width: $img-w-19;
-    height: $img-h-8;
+    width: 1.1875rem;
+    height: 0.5rem;
   }
 
   .suitcase-container {
@@ -147,7 +147,7 @@
   }
 }
 .arrow-curly {
-  height: $img-h-60;
+  height: 3.75rem;
   position: absolute;
   right: 0;
   width: 1.875rem;
@@ -155,7 +155,8 @@
 
 .abot-left {
   .img-container {
-    width: 25rem;
+    width: 26rem;
+    height: 26rem;
     min-width: 157.41px;
     > img {
       display: block;

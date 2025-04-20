@@ -63,3 +63,22 @@
     }
   }
 }
+.mobile-challenge-me {
+  @include flex-center($fd: column);
+  display: none;
+  img {
+    margin: 20px 0px;
+  }
+  p {
+    text-align: center;
+    @include fonts($fw: $bold, $fc: $turquoise, $fs: $f-s-18);
+  }
+
+  a {
+    @include fonts($fs: $f-s-18, $fc: $backround-blue);
+    display: inline-block;
+    padding: 0.9375rem 1.875rem;
+    background-color: $turquoise;
+    margin-top: 20px;
+  }
+}

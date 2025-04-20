@@ -5,13 +5,14 @@
 
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <div class="form-left">
-    <p>
+    <p class="margin-L margin-R">
       Encourage people to contact you and describe what role you are interested
       in. Express interest in contributing to a new project.
     </p>
 
     <div class="input-wrapper">
       <input
+        class="w-90"
         type="text"
         formControlName="name"
         [placeholder]="
@@ -39,6 +40,7 @@
 
     <div class="input-wrapper">
       <input
+        class="w-90"
         type="email"
         formControlName="email"
         [placeholder]="
@@ -85,6 +87,7 @@
     </div>
     <div class="input-wrapper">
       <textarea
+        class="w-90"
         formControlName="message"
         [placeholder]="
           contactForm.get('message')?.touched &&
@@ -123,7 +126,7 @@
     </button>
   </div>
   <div>
-    <div class="arrow-container show">
+    <div class="arrow-container show w-90 ">
       <a class="icon" href="#"></a>
     </div>
   </div>

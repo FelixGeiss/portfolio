@@ -1,28 +1,68 @@
 @import "../../mixin.scss";
 @import "../../styles.scss";
-
-:host {
-  @include flex-center($jc: flex-start);
-  width: 100%;
-  height: calc(100vh - 12.25rem - 4.412125rem);
-  max-width: $max-width;
-  margin-top: 4.412125rem
+:host{
+  width: 100vh;
+  height: 100%;
 }
+
 
 .imprintContainer {
- 
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 20px;
+  margin-top: 106px;
+  background-color: $color-bg-alt;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
 }
-.backIcon {
-  width: 50px;
-}
-.headerImprint {
-  color: #333;
-}
-.imprint {
 
-  padding: 20px;
-  border-radius: 8px;
+
+.imprint {
+  background-color: $color-bg;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  font-family: $font-stack;
+  color: $color-primary;
+  line-height: 1.6;
+
+
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid $color-accent;
+  }
+
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: $color-accent;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: darken($color-accent, 10%);
+    }
+
+    .letter {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-size: contain;
+      margin-right: 0.5rem;
+    }
+  }
+
+
 }

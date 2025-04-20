@@ -1,6 +1,13 @@
 @import "../../mixin.scss";
 @import "../../styles.scss";
 
+$color-bg: #ffffff;
+$color-bg-alt: #f9f9f9;
+$color-primary: #333333;
+$color-accent: #0077cc;
+$font-stack: 'Helvetica Neue', Arial, sans-serif;
+
+
 :host {
     @include flex-center($fd:column,$ai:flex-start );
     width: 100%;
