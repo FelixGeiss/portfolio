@@ -13,8 +13,8 @@
 <div class="middle-container">
   <span>Felix Geiss 2025</span>
   <div>
-    <a href="legal-notice">Legal Notice</a>
-    <a href="privacy-policy">Privacy Policy</a>
+    <a href="legal-notice" [innerHTML]="safeLegalNotice"></a>
+    <a href="privacy-policy" [innerHTML]="safePrivacyPolicy"></a>
   </div>
 </div>
 

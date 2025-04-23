@@ -1,36 +1,54 @@
-import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule, NgStyle } from '@angular/common';
 import { Project } from './project.model';
-import { NgStyle } from '@angular/common'; 
+import { Subscription } from 'rxjs';
+import { LanguageService, Lang } from '../../services/language.service';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
+  imports: [CommonModule, NgStyle],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  imports: [NgStyle] 
 })
-export class ProjectsComponent {
-  @ViewChild('hoveredVideo', { static: true }) videoRef!: ElementRef<HTMLVideoElement>;
-  @Input() project!: Project;
-  @Input() isRowReverse: boolean = false;
+export class ProjectsComponent implements OnInit, OnDestroy {
+  /** Inputs für EN- und DE-Projekte */
+  @Input() projectsEn: Project[] = [];
+  @Input() projectsDe: Project[] = [];
 
-  playVideo() {
-    const vid = this.videoRef.nativeElement;
-    vid.muted = true;
-    vid
-      .play()
-      .catch(err => {
-        if (err.name !== 'AbortError') {
-          console.error('Video-Play-Fehler:', err);
-        }
-        // AbortError ignorieren
+  /** Aktuell angezeigte Projekte */
+  displayedProjects: Project[] = [];
+  isRowReverse = false;
+  currentLang: Lang = 'de';
+  private langSub!: Subscription;
+
+  constructor(private languageService: LanguageService) {}
+
+  ngOnInit() {
+    this.langSub = this.languageService.currentLang$
+      .subscribe(lang => {
+        this.currentLang = lang;
+        this.displayedProjects = lang === 'de' ? this.projectsDe : this.projectsEn;
       });
   }
-  
 
-  resetVideo() {
-    const vid = this.videoRef.nativeElement;
-    vid.pause();
-    vid.currentTime = 0;
+  ngOnDestroy() {
+    this.langSub.unsubscribe();
+  }
+
+  /** Video abspielen – Element als Parameter übergeben */
+  playVideo(video: HTMLVideoElement) {
+    video.muted = true;
+    video.play().catch(err => {
+      if (err.name !== 'AbortError') {
+        console.error('Video-Play-Fehler:', err);
+      }
+    });
+  }
+
+  /** Video zurücksetzen */
+  resetVideo(video: HTMLVideoElement) {
+    video.pause();
+    video.currentTime = 0;
   }
 }

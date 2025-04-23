@@ -43,4 +43,5 @@ h5 {
 
 p {
   @include fonts($fs:$f-s-18,$fc:$turquoise);
+  max-width: 400px;
 }

@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "contactME": "CONTACT ME"
+  },
+
+  "nav": {
+    "whyMe": "Why me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "whyMeTitle": "Why me",
+    "whyMeText": "Write some information about yourself that is IT related. Why are you passionate about coding? Highlight your motivation for professional growth and continuous learning. Emphasise your strong problem-solving skills and passion for coding",
+    "iAm": "I am",
+    "located": "located in<br/>Stuttgart",
+    "openRelocate": "open to<br/>relocate",
+    "openRemote": "open to<br/>work remote",
+    "letsTalk": "Let’s talk"
+  },
+  "skills": {
+    "mySkills": "My Skills",
+    "ChallengeMe": "Challenge <br/> me",
+    "ChallengeMeContent": "I am always happy to learn new technologies, just tell me what you need.",
+    "letsTalk": "Let’s talk"
+  },
+  "project": {
+    "myProjects": "My Projects"
+  },
+
+  "testimonial": {
+    "header": "Need a teamplayer? Here what my colleagues said about me",
+    "name1": "Marco H",
+    "project1": "Project Join",
+    "content1": "I had the opportunity to work with Felix on a project and got to know him as a highly reliable, thoughtful, and pleasant person. In the frontend, he impressed with his structured approach, technical understanding, and clearly written code. We’ve stayed in touch even after the project ended – which speaks to how positive the collaboration was.",
+    "name2": "Evelyn M",
+    "project2": "Project Join",
+    "content2": "‘’ He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code. ‘",
+    "name3": "James R",
+    "project3": "Project Join",
+    "content3": "‘’ He is a reliable and friendly person. Work in a structured way and write a clear code. I recommend him as a colleague.’’"
+  },
+  "contact": {
+    "contacContent": "As a frontend developer focused on modern web applications, I’m looking for new challenges and exciting projects. I’d be happy to support your team – feel free to reach out.",
+    "agreeContent": "I've read the <a href='privacy-policy'>privacy policy</a> and agree to theprocessing of my data as outlined.",
+    "name": "Yor name",
+    "massage": "Yor message",
+    "email": "Your email",
+    "requierd": "Field is required"
+  },
+
+  "footer": {
+    "legalNotice": "Legal Notice",
+    "privacyPolicy": "Privacy Policy"
+  }
+}

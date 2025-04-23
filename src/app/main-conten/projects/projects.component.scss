@@ -4,13 +4,9 @@
 * {
   transition: all 125ms ease-out;
 }
-:host {
-  @include flex-center();
-
-}
 
 .project-container {
-  @include flex-center($jc: space-between);
+  @include flex-center($jc: space-between );
   gap: $gap-24;
   width: auto;
   height: auto;

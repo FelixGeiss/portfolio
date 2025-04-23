@@ -1,5 +1,5 @@
 <div class="main-container">
-  <h2>My Skills</h2>
+  <h2 [innerHTML]="safe.mySkills"></h2>
   <div class="skills-icons">
     <div>
       <img src="assets/img/type-script.svg" alt="TypeScript" />
@@ -42,21 +42,14 @@
     </div>
     <div class="challenge-container">
       <img src="assets/img/challenge-me.svg" alt="Challenge me" />
-      <h6>
-        Challenge <br />
-        me
-      </h6>
-      <p>
-        I am always happy to learn new technologies, just tell me what you need.
-      </p>
+      <h6 [innerHTML]="safe.ChallengeMe"></h6>
+      <p [innerHTML]="safe.ChallengeMeContent"></p>
     </div>
   </div>
 
   <div class="mobile-challenge-me show margin-L margin-R">
     <img src="assets/img/arrow-mobile.svg" alt="" />
-    <p>
-      I am always happy to learn new technologies, just tell me what you need.
-    </p>
-    <div><a href="#contact">Let’s talk</a></div>
+    <p [innerHTML]="safe.ChallengeMeContent"></p>
+    <div><a href="#contact" [innerHTML]="safe.letsTalk"></a></div>
   </div>
 </div>

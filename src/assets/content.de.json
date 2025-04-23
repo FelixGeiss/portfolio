@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "contactME": "JETZT KONTAKTIEREN"
+  },
+  "nav": {
+    "whyMe": "Warum ich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "about": {
+    "whyMeTitle": "Warum ich",
+    "whyMeText": "Schreibe hier etwas IT-bezogenes über dich: Warum brennst du fürs Programmieren? Hebe deine Motivation für berufliches Wachstum und kontinuierliches Lernen hervor. Beton deine ausgeprägten Problemlösungsfähigkeiten und deine Leidenschaft fürs Coden.",
+    "iAm": "Ich",
+    "located": "befinde mich in<br/>Stuttgart",
+    "openRelocate": "bin bereit <br/> umzuziehen",
+    "openRemote": "arbeite<br/>gerne remote",
+    "letsTalk": "Lass uns reden"
+  },
+  "skills": {
+    "mySkills": "Meine Fähigkeiten",
+    "ChallengeMe": "Fordere<br/>mich heraus",
+    "ChallengeMeContent": "Ich freue mich darauf, neue Technologien kennenzulernen – sagen Sie mir einfach, was gebraucht wird, und ich lege los.",
+    "letsTalk": "Lass uns reden"
+  },
+  "project": {
+    "myProjects": "Meine Projekte"
+  },
+  "testimonial": {
+    "header": "Brauchen Sie einen Teamplayer? Das haben meine Kollegen über mich gesagt",
+    "name1": "Marco H",
+    "project1": "Projekt Join",
+    "content1": "Ich hatte die Gelegenheit, in einem Projekt mit Felix zusammenzuarbeiten, und habe ihn dabei als äußerst zuverlässigen, reflektierten und angenehmen Menschen kennengelernt. Im Frontend überzeugte er durch strukturiertes Arbeiten, technisches Verständnis und klar verständlichen Code. Auch nach dem Projekt stehen wir weiterhin in Kontakt – was dafür spricht, wie positiv die Zusammenarbeit war.",
+    "name2": "Evelyn M",
+    "project2": "Projekt Join",
+    "content2": "Er ist ein vertrauenswürdiger Teamplayer und kann gut mit dem Stress von Deadlines umgehen. Er arbeitet strukturiert und schreibt klaren, sauberen Code.",
+    "name3": "James R",
+    "project3": "Projekt Join",
+    "content3": "Er ist eine zuverlässige und freundliche Person. Er arbeitet strukturiert und schreibt verständlichen Code. Ich empfehle ihn uneingeschränkt als Kollegen."
+  },
+  "contact": {
+    "contacContent": "Als Frontend-Entwickler mit Fokus auf moderne Webanwendungen suche ich neue berufliche Herausforderungen und spannende Projekte. Ich freue mich auf Ihre Nachricht und die Möglichkeit, Ihr Team zu unterstützen.",
+    "agreeContent": "Ich habe die <a href='privacy-policy'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "name": "Dein Name",
+    "massage": "Deine Nachricht",
+    "email": "Deine E-Mail",
+    "requierd": "Feld ist erforderlich"
+  },
+  "footer": {
+    "legalNotice": "Impressum",
+    "privacyPolicy": "Datenschutzerklärung"
+  }
+}

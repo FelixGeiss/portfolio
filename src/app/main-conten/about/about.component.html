@@ -6,28 +6,21 @@
   </div>
   <div class="about-right">
     <div>
-      <h2>Why me</h2>
-      <p class="margin-L margin-R">
-        Write some information about yourself that is IT related. Why are you
-        passionate about coding? Highlight your motivation for professional
-        growth and continuous learning. Emphasise your strong problem-solving
-        skills and passion for coding.
-      </p>
+      <h2 id="about" [innerHTML]="safe.whyMeTitle"></h2>
+      <p [innerHTML]="safe.whyMeText" class="margin-L margin-R"></p>
     </div>
     <div class="icon-container">
       <div>
         <div class="maobile-arrow-curve-left w-90">
           <img src="assets/img/arrow-curve-left .svg" alt="">
         </div>
-        <h3>I am</h3>
+        <h3 [innerHTML]="safe.iAm"></h3>
         <div class="locaishen-container display-flex">
           <div>
             <img src="assets/img/locaishen-sign .svg" alt="" />
             <div class="elipse"></div>
           </div>
-          <p>
-            located <br />
-            Stuttgart
+          <p [innerHTML]="safe.located">
           </p>
         </div>
       </div>
@@ -39,9 +32,7 @@
             alt=""
           />
           <img src="assets/img/suitcase .svg" alt="" />
-          <p>
-            open to <br />
-            relocate
+          <p [innerHTML]="safe.openRelocate">
           </p>
         </div>
       </div>
@@ -54,9 +45,7 @@
             src="assets/img/remote-signal-strong.svg"
             alt=""
           />
-          <p>
-            open to <br />
-            work remote
+          <p [innerHTML]="safe.openRemote">
           </p>
           <img
             class="arrow-curve-right"
@@ -74,6 +63,7 @@
     <div class="maobile-arrow-curve-right w-90">
       <img src="assets/img/arrow-curve-right.svg" alt="">
     </div>
-    <div><a href="#contact">Let’s talk</a></div>
+    <div><a href="#contact" [innerHTML]="safe.letsTalk"></a></div>
   </div>
 </div>
+

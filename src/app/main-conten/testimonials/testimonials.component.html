@@ -1,32 +1,24 @@
-<div class="main-container">
-  <h4>Need a teamplayer? Here what my colleagues said about me</h4>
+<!-- testimonials.component.html -->
+<div class="main-container" *ngIf="safe.header">
+  <h4 [innerHTML]="safe.header"></h4>
   <div class="text-container-main">
     <div>
       <img src="assets/img/arrow-curve-left-big.svg" alt="" />
       <div class="text-container-testimonials">
-        <h4>Noah Mueller</h4>
-        <h5>Project Sharkie</h5>
-        <p>
-          ‘’Marcus had to develop, format and deliver content in collaboration
-          with the team members.He is a reliable and friendly person.’’
-        </p>
+        <h4>{{ content.name1 }}</h4>
+        <h5>{{ content.project1 }}</h5>
+        <p [innerHTML]="safe.content1"></p>
       </div>
     </div>
     <div class="text-container-testimonials">
-      <h4>Evelyn Marx</h4>
-      <h5>roject Pollo Loco</h5>
-      <p>
-        ‘’ He is a trustworthy teamplayer and can cope with the stress of
-        deadlines. Structured work and clear code. ‘’
-      </p>
+      <h4>{{ content.name2 }}</h4>
+      <h5>{{ content.project2 }}</h5>
+      <p [innerHTML]="safe.content2"></p>
     </div>
     <div class="text-container-testimonials">
-      <h4>James Rugman</h4>
-      <h5>Project Join</h5>
-      <p>
-        ‘’ He is a reliable and friendly person. Work in a structured way and
-        write a clear code. I recommend him as a colleague.’’
-      </p>
+      <h4>{{ content.name3 }}</h4>
+      <h5>{{ content.project3 }}</h5>
+      <p [innerHTML]="safe.content3"></p>
     </div>
   </div>
 </div>

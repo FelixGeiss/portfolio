@@ -1,29 +1,34 @@
-<div
-  class="project-container"
-  [ngStyle]="{ 'flex-direction': isRowReverse ? 'row-reverse' : 'row' }"
->
-  <div class="image-container">
-    <!-- <img [src]="project.videoUrl" alt="{{ project.title }}"> -->
-    <a [href]="project.liveTestLink" target="_blank">
-      <video
-        #hoveredVideo
-        muted
-        preload="metadata"
-        (mouseenter)="playVideo()"
-        (mouseleave)="resetVideo()"
-      >
-        <source [src]="project.videoUrl" type="video/mp4" />
-        Dein Browser unterstützt das Video-Tag nicht.
-      </video>
-    </a>
-  </div>
-  <div class="text-container-project">
-    <h3>{{ project.title }}</h3>
-    <h5 class="technologies margin-R margin-L">{{ project.technologies.join(" | ") }}</h5>
-    <h5 class="description margin-R margin-L">{{ project.description }}</h5>
-    <div class="links">
-      <a [href]="project.githubLink" target="_blank">Github</a>
-      <a [href]="project.liveTestLink" target="_blank">Live Test</a>
+<ng-container *ngFor="let project of displayedProjects">
+  <div
+    class="project-container"
+    [ngStyle]="{ 'flex-direction': isRowReverse ? 'row-reverse' : 'row' }"
+  >
+    <div class="image-container">
+      <a [href]="project.liveTestLink" target="_blank">
+        <video
+          #hoveredVideo
+          muted
+          preload="metadata"
+          (mouseenter)="playVideo(hoveredVideo)"
+          (mouseleave)="resetVideo(hoveredVideo)"
+        >
+          <source [src]="project.videoUrl" type="video/mp4" />
+          Dein Browser unterstützt das Video-Tag nicht.
+        </video>
+      </a>
+    </div>
+    <div class="text-container-project">
+      <h3>{{ project.title }}</h3>
+      <h5 class="technologies margin-R margin-L">
+        {{ project.technologies.join(' | ') }}
+      </h5>
+      <h5 class="description margin-R margin-L">
+        {{ project.description }}
+      </h5>
+      <div class="links">
+        <a [href]="project.githubLink" target="_blank">GitHub</a>
+        <a [href]="project.liveTestLink" target="_blank">Live Test</a>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>

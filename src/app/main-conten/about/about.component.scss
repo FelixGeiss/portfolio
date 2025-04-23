@@ -16,9 +16,13 @@
 .about-right {
   @include flex-center($fd: column, $ai: flex-end, $jc: space-between);
   width: 55%;
+  > div:nth-child(1) {
+    margin-bottom: 1.5rem;
+  }
   > div:nth-child(2) {
     > div {
       margin-bottom: 1rem;
+    
     }
   }
 
@@ -26,6 +30,7 @@
     @include fonts();
     text-align: right;
     margin-bottom: $gap-24;
+    scroll-margin-top: 90px;
   }
 
   h3 {
@@ -37,6 +42,7 @@
   p {
     @include fonts($fc: $turquoise, $fs: $f-s-18);
     text-align: right;
+    
   }
   a {
     @include fonts($fs: $f-s-18, $fc: $backround-blue);

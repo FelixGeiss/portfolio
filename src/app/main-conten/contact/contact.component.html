@@ -1,15 +1,14 @@
 <div class="header-contact">
-  <h2>Contact me</h2>
+  <h2 [innerHTML]="safeHeader"></h2>
   <img src="assets/img/arrow-down.svg" alt="" />
 </div>
 
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <!-- Linke Spalte: Intro + Name + E-Mail -->
   <div class="form-left">
-    <p class="margin-L margin-R">
-      Encourage people to contact you and describe what role you are interested
-      in. Express interest in contributing to a new project.
-    </p>
+    <p class="margin-L margin-R" [innerHTML]="safeContent"></p>
 
+    <!-- Name -->
     <div class="input-wrapper">
       <input
         class="w-90"
@@ -17,13 +16,13 @@
         formControlName="name"
         [placeholder]="
           contactForm.get('name')?.touched && contactForm.get('name')?.invalid
-            ? 'Your name is required'
-            : 'Your Name'
+            ? requiredText
+            : namePlaceholder
         "
         [ngClass]="{
-          error:
-            contactForm.get('name')?.touched && contactForm.get('name')?.invalid
+          error: contactForm.get('name')?.touched && contactForm.get('name')?.invalid
         }"
+        (blur)="contactForm.get('name')?.markAsTouched()"
         style="padding-right: 3rem"
       />
       <img
@@ -38,6 +37,7 @@
       />
     </div>
 
+    <!-- E-Mail -->
     <div class="input-wrapper">
       <input
         class="w-90"
@@ -45,14 +45,13 @@
         formControlName="email"
         [placeholder]="
           contactForm.get('email')?.touched && contactForm.get('email')?.invalid
-            ? 'Your email is required'
-            : 'Your Email'
+            ? requiredText
+            : emailPlaceholder
         "
         [ngClass]="{
-          error:
-            contactForm.get('email')?.touched &&
-            contactForm.get('email')?.invalid
+          error: contactForm.get('email')?.touched && contactForm.get('email')?.invalid
         }"
+        (blur)="contactForm.get('email')?.markAsTouched()"
         style="padding-right: 3rem"
       />
       <img
@@ -68,10 +67,11 @@
     </div>
   </div>
 
+  <!-- Rechte Spalte: Kontaktinfos + Nachricht -->
   <div class="form-right">
     <div class="mail-tel">
       <div>
-        <a href="mailto:geissq@gmail.com.com">
+        <a href="mailto:geissq@gmail.com">
           <div class="letter"></div>
           <span>E-mail: geissq&#64;gmail.com</span>
         </a>
@@ -80,26 +80,25 @@
           <span>Tel: 0152 224 927 73</span>
         </a>
       </div>
-
       <div class="arrow-container">
         <a class="icon" href="#"></a>
       </div>
     </div>
+
+    <!-- Nachricht -->
     <div class="input-wrapper">
       <textarea
         class="w-90"
         formControlName="message"
         [placeholder]="
-          contactForm.get('message')?.touched &&
-          contactForm.get('message')?.invalid
-            ? 'Your message is required'
-            : 'Your Message'
+          contactForm.get('message')?.touched && contactForm.get('message')?.invalid
+            ? requiredText
+            : messagePlaceholder
         "
         [ngClass]="{
-          error:
-            contactForm.get('message')?.touched &&
-            contactForm.get('message')?.invalid
+          error: contactForm.get('message')?.touched && contactForm.get('message')?.invalid
         }"
+        (blur)="contactForm.get('message')?.markAsTouched()"
         style="padding-right: 3rem"
       ></textarea>
       <img
@@ -115,25 +114,29 @@
     </div>
   </div>
 
+  <!-- Datenschutzerklärung -->
   <label class="privacy">
     <input type="checkbox" (change)="isCheckt($event)" />
-    I've read the <a href="privacy-policy">privacy policy</a> and agree to the
-    processing of my data as outlined.
+    <span [innerHTML]="safeAgree"></span>
   </label>
+
+  <!-- Absenden-Button -->
   <div class="button-container">
     <button type="submit" [disabled]="!isChecked || contactForm.invalid">
       Senden
     </button>
   </div>
+
+  <!-- Fuß-Elemente / Mobil -->
   <div>
-    <div class="arrow-container show w-90 ">
+    <div class="arrow-container show w-90">
       <a class="icon" href="#"></a>
     </div>
   </div>
   <div class="mail-tel-mobile show">
     <div>
       <div>
-        <a href="mailto:geissq@gmail.com.com">
+        <a href="mailto:geissq@gmail.com">
           <div class="letter"></div>
           <span>E-mail: geissq&#64;gmail.com</span>
         </a>
