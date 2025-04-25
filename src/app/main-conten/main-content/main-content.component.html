@@ -1,12 +1,13 @@
 <app-hero></app-hero>
 <app-about></app-about>
-<app-skills id="skills"></app-skills>
-<h2 [innerHTML]="safeMyProjects"></h2>
-<section id="projects">
+<app-skills></app-skills>
+
+<section class="project-section">
+  <h2 id="projects" [innerHTML]="safeMyProjects"></h2>
   <app-projects
     [projectsEn]="projectsEn"
     [projectsDe]="projectsDe"
   ></app-projects>
 </section>
-<app-testimonials id="testimonials"></app-testimonials>
-<app-contact id="contact"></app-contact>
+<app-testimonials></app-testimonials>
+<app-contact></app-contact>

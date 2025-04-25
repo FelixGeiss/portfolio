@@ -28,7 +28,7 @@ import { Project } from '../projects/project.model';
   styleUrls: ['./main-content.component.scss']
 })
 export class MainContentComponent implements OnInit, OnDestroy {
-  title = 'portfolio';
+
 
   projectsEn: Project[] = [
     {
@@ -40,12 +40,12 @@ export class MainContentComponent implements OnInit, OnDestroy {
       liveTestLink: 'http://join.felixgeiss.de/index.html'
     },
     {
-      title: 'Sharkie',
-      videoUrl: 'assets/img/test-bild-join.png',
-      technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      githubLink: 'https://github.com/dein-benutzer/sharkie',
-      liveTestLink: 'https://dein-benutzer.github.io/sharkie/'
+      title: 'Pokedex',
+      videoUrl: 'assets/Video/Aufzeichnung pokedex.mp4',
+      technologies: ['JavaScript', 'HTML', 'CSS', 'Pokémon API'],
+      description: 'Pokedex web application that uses the Poke API to fetch and display Pokémon data and images.Try it now and discover your favorite Pokémon!',
+      githubLink: 'https://github.com/FelixGeiss/pokedex',
+      liveTestLink: 'http://pokedex.felixgeiss.de/'
     },
     {
       title: 'Pollo Loco',
@@ -67,12 +67,12 @@ export class MainContentComponent implements OnInit, OnDestroy {
       liveTestLink: 'http://join.felixgeiss.de/index.html'
     },
     {
-      title: 'Sharkie',
-      videoUrl: 'assets/img/test-bild-join.png',
-      technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
-      description: 'Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.',
-      githubLink: 'https://github.com/dein-benutzer/sharkie',
-      liveTestLink: 'https://dein-benutzer.github.io/sharkie/'
+      title: 'Pokedex',
+      videoUrl: 'assets/Video/Aufzeichnung pokedex.mp4',
+      technologies: ['JavaScript', 'HTML', 'CSS', 'Pokémon API'],
+      description: 'Pokédex-Webanwendung, die die Poke API nutzt, um Pokémon-Daten und -Bilder abzurufen und anzuzeigen.Probier es jetzt aus und entdecke deine Lieblings-Pokémon!',
+      githubLink: 'https://github.com/FelixGeiss/pokedex',
+      liveTestLink: 'http://pokedex.felixgeiss.de/'
     },
     {
       title: 'Pollo Loco',

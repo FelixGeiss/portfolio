@@ -1,6 +1,10 @@
 @import "../mixin.scss";
 @import "../styles.scss";
 
+main{
+    box-sizing: border-box;
+    position: relative;
+}
 
 header{
     width: 100%;

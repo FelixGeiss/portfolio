@@ -1,9 +1,8 @@
 <ng-container *ngFor="let project of displayedProjects">
   <div
     class="project-container"
-    [ngStyle]="{ 'flex-direction': isRowReverse ? 'row-reverse' : 'row' }"
   >
-    <div class="image-container">
+    <div class="image-container ">
       <a [href]="project.liveTestLink" target="_blank">
         <video
           #hoveredVideo

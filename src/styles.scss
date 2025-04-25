@@ -3,6 +3,7 @@ html {
   scroll-behavior: smooth;
   width: 100%;
 
+
   // WebKit (Chrome, Safari, Edge)
   &::-webkit-scrollbar {
     width: 8px;
@@ -115,17 +116,15 @@ $nowrap: nowrap;
 body {
   margin: 0;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
   background: #0b042d;
   background: linear-gradient(
     141deg,
     rgba(11, 4, 45, 1) 0%,
     rgba(31, 14, 114, 1) 100%
   );
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 main {
@@ -190,15 +189,12 @@ p {
 }
 @media (max-width: 992px) {
   html {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
+
 @media (max-width: 768px) {
-  html {
-    font-size: 7px;
-  }
-}
-@media (max-width: 575px) {
+
   html {
     font-size: 12px;
   }
@@ -206,14 +202,8 @@ p {
   main {
     margin: 0;
   }
-  h1 {
-    white-space: normal !important;
-    text-align: center !important;
-  }
-  h2 {
-    white-space: normal !important;
-    text-align: center !important;
-  }
+
+
   .margin-L {
     margin-left: 20px;
   }
@@ -238,6 +228,10 @@ p {
     .hero-left {
       width: fit-content;
     }
+  }
+
+  app-about{
+  margin-bottom: 10rem; 
   }
   .main-container {
     align-items: center !important;
@@ -303,6 +297,11 @@ p {
     justify-content: flex-end;
     > img {
       transform: scaleY(-1);
+    }
+  }
+  .challenge-container{
+    >p{
+      display: none!important;
     }
   }
   .project-container {
@@ -377,6 +376,12 @@ p {
   }
   .mail-tel {
     display: none !important;
+  }
+  .privacy{
+    justify-content: center !important;
+  }
+  .privacyContent{
+    width: 85%!important;
   }
   .show {
     display: flex !important;

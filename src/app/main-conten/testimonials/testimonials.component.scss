@@ -6,12 +6,14 @@
 
 :host {
   @include flex-center($fd:column);
+  margin-bottom: 1.5rem;
 
 }
 
 .main-container {
   @include flex-center($fd: column, $ai: stretch);
   max-width: $max-width;
+  width: 100%;
 
   > div {
     @include flex-center($jc: space-between, $ai:stretch);
@@ -44,4 +46,15 @@ h5 {
 p {
   @include fonts($fs:$f-s-18,$fc:$turquoise);
   max-width: 400px;
+}
+@media (max-width: 768px) {
+
+  h1 {
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  h2 {
+    white-space: normal !important;
+    text-align: center !important;
+  }
 }

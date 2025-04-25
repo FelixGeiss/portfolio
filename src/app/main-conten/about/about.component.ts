@@ -35,7 +35,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // Auf Sprach­wechsel aus NavComponent reagieren:
+    
     this.langSub = this.languageService.currentLang$
       .subscribe(lang => {
         this.currentLang = lang;
@@ -52,7 +52,6 @@ export class AboutComponent implements OnInit, OnDestroy {
       .get<{ about: AboutContent }>(`assets/content.${this.currentLang}.json`)
       .subscribe(json => {
         this.content = json.about;
-        // HTML‑Strings sanitizen
         for (const key of Object.keys(this.content) as Array<keyof AboutContent>) {
           this.safe[key] = this.sanitizer.bypassSecurityTrustHtml(this.content[key]);
         }

@@ -1,24 +1,26 @@
 <nav>
   <ul class="display-none">
     <li><a href="#">&lt;FG&gt;</a></li>
-    <li><a href="#about"    [innerHTML]="safeNav.whyMe"></a></li>
-    <li><a href="#skills"   [innerHTML]="safeNav.skills"></a></li>
+    <li><a href="#about" [innerHTML]="safeNav.whyMe"></a></li>
+    <li><a href="#skills" [innerHTML]="safeNav.skills"></a></li>
     <li><a href="#projects" [innerHTML]="safeNav.projects"></a></li>
-    <li><a href="#contact"  [innerHTML]="safeNav.contact"></a></li>
+    <li><a href="#contact" [innerHTML]="safeNav.contact"></a></li>
   </ul>
-<span class="display-none">
-  <button 
-          [class.active]="(currentLang$ | async) === 'de'"
-          (click)="switchLang('de')">
-    DE
-  </button>
-  |
-  <button
-    [class.active]="(currentLang$ | async) === 'en'"
-    (click)="switchLang('en')">
-    EN
-  </button>
-</span>
+  <span class="display-none">
+    <button
+      [class.active]="(currentLang$ | async) === 'de'"
+      (click)="switchLang('de')"
+    >
+      DE
+    </button>
+    |
+    <button
+      [class.active]="(currentLang$ | async) === 'en'"
+      (click)="switchLang('en')"
+    >
+      EN
+    </button>
+  </span>
   <a class="show logo-mobile" href="#">&lt;FG&gt;</a>
 
   <div class="burger-menu show" [class.open]="menuOpen">
@@ -26,12 +28,28 @@
       <span></span><span></span><span></span>
     </button>
     <ul *ngIf="menuOpen">
-      <li><a class="show" href="#about"    [innerHTML]="safeNav.whyMe"></a></li>
-      <li><a class="show" href="#skills"   [innerHTML]="safeNav.skills"></a></li>
-      <li><a class="show" href="#projects" [innerHTML]="safeNav.projects"></a></li>
-      <li><a class="show" href="#contact"  [innerHTML]="safeNav.contact"></a></li>
+      <li><a class="show" href="#about" [innerHTML]="safeNav.whyMe"></a></li>
+      <li><a class="show" href="#skills" [innerHTML]="safeNav.skills"></a></li>
       <li>
-        <p>DE</p> | <p>EN</p>
+        <a class="show" href="#projects" [innerHTML]="safeNav.projects"></a>
+      </li>
+      <li>
+        <a class="show" href="#contact" [innerHTML]="safeNav.contact"></a>
+      </li>
+      <li >
+        <button class="show"
+          [class.active]="(currentLang$ | async) === 'de'"
+          (click)="switchLang('de')"
+        >
+          DE
+        </button>
+        |
+        <button class="show"
+          [class.active]="(currentLang$ | async) === 'en'"
+          (click)="switchLang('en')"
+        >
+          EN
+        </button>
       </li>
     </ul>
   </div>

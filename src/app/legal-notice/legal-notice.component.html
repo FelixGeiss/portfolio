@@ -1,16 +1,17 @@
+
 <div class="imprintContainer">
   <div class="imprint">
-    <h2>Imprint</h2>
-    <h2 id="m46">Diensteanbieter</h2>
-    <p>Felix Geiss</p>
-    <p>Fanny-Leicht-Str. 4</p>
-    <p>70563 Stuttgart-Vaihingen</p>
+    <h2>{{ data.title }}</h2>
 
-    <h2 id="m56">Kontaktmöglichkeiten</h2>
+    <h2 id="m46">{{ data.providerTitle }}</h2>
+    <p>{{ data.providerName }}</p>
+    <p *ngFor="let line of data.addressLines">{{ line }}</p>
+
+    <h2 id="m56">{{ data.contactTitle }}</h2>
     <p>
-      <a href="mailto:geissq@gmail.com.com">
+      <a [href]="'mailto:' + data.contactEmail">
         <div class="letter"></div>
-        <span>E-mail: geissq&#64;gmail.com</span>
+        <span>E-mail: {{ data.contactEmail }}</span>
       </a>
     </p>
   </div>

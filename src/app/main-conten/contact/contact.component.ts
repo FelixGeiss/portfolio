@@ -1,25 +1,29 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { LanguageService, Lang } from '../../services/language.service';
 
-// Interface angepasst an die externen JSON-Keys
 interface ContactContent {
   contacContent: string;
   agreeContent: string;
   name: string;
   email: string;
-  massage: string;   // entspricht dem JSON-Key "massage"
-  requierd: string;  // entspricht dem JSON-Key "requierd"
+  massage: string;
+  requierd: string;
+  button: string;    
 }
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
@@ -34,7 +38,6 @@ export class ContactComponent implements OnInit, OnDestroy {
     message: new FormControl('', Validators.required)
   });
 
-  // dynamisch geladene Texte
   safeHeader!: SafeHtml;
   safeContent!: SafeHtml;
   safeAgree!: SafeHtml;
@@ -42,6 +45,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   emailPlaceholder!: string;
   messagePlaceholder!: string;
   requiredText!: string;
+  buttonText!: string;            
 
   currentLang: Lang = 'de';
   private langSub!: Subscription;
@@ -67,20 +71,18 @@ export class ContactComponent implements OnInit, OnDestroy {
   private loadContent(lang: Lang): void {
     this.http.get<any>(`assets/content.${lang}.json`)
       .subscribe(json => {
-        // Header-Text aus nav.contact
         const header = json.nav?.contact || 'Contact';
         this.safeHeader = this.sanitizer.bypassSecurityTrustHtml(header);
 
-        // Kontakt-Intro-Text und Checkbox-Label aus contact-Section
         const contactSection: ContactContent = json.contact;
-        this.safeContent = this.sanitizer.bypassSecurityTrustHtml(contactSection.contacContent);
-        this.safeAgree   = this.sanitizer.bypassSecurityTrustHtml(contactSection.agreeContent);
+        this.safeContent   = this.sanitizer.bypassSecurityTrustHtml(contactSection.contacContent);
+        this.safeAgree     = this.sanitizer.bypassSecurityTrustHtml(contactSection.agreeContent);
 
-        // Platzhalter und Fehlermeldung aus JSON
         this.namePlaceholder    = contactSection.name;
         this.emailPlaceholder   = contactSection.email;
         this.messagePlaceholder = contactSection.massage;
         this.requiredText       = contactSection.requierd;
+        this.buttonText         = contactSection.button;   
       });
   }
 
@@ -90,9 +92,29 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   onSubmit(): void {
     if (this.contactForm.valid && this.isChecked) {
-      // Absende-Logik hier implementieren
+      const payload = {
+        name: this.contactForm.value.name,
+        email: this.contactForm.value.email,
+        message: this.contactForm.value.message
+      };
+
+      this.http.post('https://felixgeiss.de/sendMail.php', payload)
+        .subscribe({
+          next: () => {
+            alert('Deine Nachricht wurde erfolgreich versendet!');
+            this.contactForm.reset();
+            this.isChecked = false;
+          },
+          error: err => {
+            console.error('Fehler beim Senden:', err);
+            alert('Beim Versenden ist leider ein Fehler aufgetreten. Bitte versuche es später erneut.');
+          }
+        });
     } else {
       this.contactForm.markAllAsTouched();
+      if (!this.isChecked) {
+        alert('Bitte bestätige die Datenschutzerklärung.');
+      }
     }
   }
 }

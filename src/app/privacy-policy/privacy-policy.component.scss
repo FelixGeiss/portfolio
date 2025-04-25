@@ -1,6 +1,8 @@
 @import "../../mixin.scss";
 @import "../../styles.scss";
 
+
+
 $color-bg: #ffffff;
 $color-bg-alt: #f9f9f9;
 $color-primary: #333333;
@@ -9,18 +11,15 @@ $font-stack: 'Helvetica Neue', Arial, sans-serif;
 
 
 :host {
-    @include flex-center($fd:column,$ai:flex-start );
     width: 100%;
     height: 100%;
     max-width: $max-width;
     margin-top: 6rem;
- 
+  
   }
 
-  // Variablen für Farben, Schriftarten und Maße
 $primary-color: #333;
 $secondary-color: #555;
-$accent-color: #0088cc;
 $bg-color: #f9f9f9;
 $font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $max-width: 800px;
@@ -36,12 +35,11 @@ $max-width: 800px;
   color: $secondary-color;
   line-height: 1.6;
 
-  // Überschriften
+
   h1 {
     font-size: 2.5rem;
     color: $primary-color;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid $accent-color;
     padding-bottom: 0.5rem;
   }
   
@@ -61,13 +59,13 @@ $max-width: 800px;
     margin-bottom: 1rem;
   }
   
-  // Absätze
+
   p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
   }
   
-  // Allgemeine Listenformate
+ 
   ul {
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
@@ -77,18 +75,9 @@ $max-width: 800px;
       line-height: 1.5;
     }
   }
-  
-  // Links
-  a {
-    color: $accent-color;
-    text-decoration: none;
-    
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  
-  // Indexliste (Navigationsliste)
+
+ 
+
   .index {
     display: flex;
     flex-wrap: wrap;
@@ -110,7 +99,7 @@ $max-width: 800px;
     }
   }
   
-  // Siegel/Abschluss-Hinweis (zum Beispiel für den Generator-Vermerk)
+ 
   .seal {
     text-align: center;
     font-size: 0.875rem;
@@ -121,4 +110,11 @@ $max-width: 800px;
       color: $secondary-color;
     }
   }
+}
+@media (max-width: 768px){
+h1{
+  font-size: 1.5rem !important;
+}
+
+
 }

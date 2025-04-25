@@ -1,11 +1,13 @@
 @import "../../mixin.scss";
 @import "../../styles.scss";
 :host{
-  @include flex-center($fd:column,$ai:flex-start );
+  @include flex-center($fd:column ,$jc:flex-start);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: $max-width;
-  margin-top: 6rem;
+  margin-top: 7rem;
+
+
 }
 
 $color-bg: #ffffff;
@@ -15,12 +17,10 @@ $color-accent: #0077cc;
 $font-stack: 'Helvetica Neue', Arial, sans-serif;
 
 
+
+
+
 .imprintContainer {
-  padding: 2rem;
-}
-
-
-.imprint {
   background-color: $color-bg;
   border-radius: 0.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -30,6 +30,7 @@ $font-stack: 'Helvetica Neue', Arial, sans-serif;
   font-family: $font-stack;
   color: $color-primary;
   line-height: 1.6;
+  box-sizing: border-box;
 
 
 
@@ -49,8 +50,7 @@ $font-stack: 'Helvetica Neue', Arial, sans-serif;
 
 
   a {
-    display: inline-flex;
-    align-items: center;
+ 
     text-decoration: none;
     color: $color-accent;
     font-weight: 500;
@@ -71,3 +71,5 @@ $font-stack: 'Helvetica Neue', Arial, sans-serif;
 
 
 }
+
+

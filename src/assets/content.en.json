@@ -2,7 +2,6 @@
   "hero": {
     "contactME": "CONTACT ME"
   },
-
   "nav": {
     "whyMe": "Why me",
     "skills": "Skills",
@@ -11,7 +10,7 @@
   },
   "about": {
     "whyMeTitle": "Why me",
-    "whyMeText": "Write some information about yourself that is IT related. Why are you passionate about coding? Highlight your motivation for professional growth and continuous learning. Emphasise your strong problem-solving skills and passion for coding",
+    "whyMeText": "I love solving problems creatively. Programming allows me to combine analytical thinking with creativity – and that’s exactly what excites me. I enjoy learning new things, constantly growing, and finding thoughtful solutions to complex challenges. For me, code is more than just technology – it’s a way to bring ideas to life with structure and purpose.",
     "iAm": "I am",
     "located": "located in<br/>Stuttgart",
     "openRelocate": "open to<br/>relocate",
@@ -27,30 +26,41 @@
   "project": {
     "myProjects": "My Projects"
   },
-
   "testimonial": {
-    "header": "Need a teamplayer? Here what my colleagues said about me",
+    "header": "Need a teamplayer? Here’s what my colleagues said about me",
     "name1": "Marco H",
     "project1": "Project Join",
     "content1": "I had the opportunity to work with Felix on a project and got to know him as a highly reliable, thoughtful, and pleasant person. In the frontend, he impressed with his structured approach, technical understanding, and clearly written code. We’ve stayed in touch even after the project ended – which speaks to how positive the collaboration was.",
-    "name2": "Evelyn M",
+    "name2": "Nathalie D",
     "project2": "Project Join",
-    "content2": "‘’ He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code. ‘",
+    "content2": "Felix has been a highly committed and cooperative partner. Thanks to his expertise, he was an extremely reliable point of contact for any questions or issues. It was a pleasure working with him, and I would gladly do so again!",
     "name3": "James R",
     "project3": "Project Join",
-    "content3": "‘’ He is a reliable and friendly person. Work in a structured way and write a clear code. I recommend him as a colleague.’’"
+    "content3": "He is a reliable and friendly person. He works in a structured way and writes clear code. I recommend him without reservation as a colleague."
   },
   "contact": {
     "contacContent": "As a frontend developer focused on modern web applications, I’m looking for new challenges and exciting projects. I’d be happy to support your team – feel free to reach out.",
-    "agreeContent": "I've read the <a href='privacy-policy'>privacy policy</a> and agree to theprocessing of my data as outlined.",
-    "name": "Yor name",
-    "massage": "Yor message",
+    "agreeContent": "I’ve read the <a href='privacy-policy' style='color:#e15544;'>privacy policy</a> and agree to the processing of my data as outlined.",
+    "name": "Your name",
+    "massage": "Your message",
     "email": "Your email",
-    "requierd": "Field is required"
+    "requierd": "Field is required",
+    "button": "Send"
   },
-
   "footer": {
     "legalNotice": "Legal Notice",
     "privacyPolicy": "Privacy Policy"
+  },
+  "privacyPolicy": "<h1>Privacy Policy</h1><p>Effective Date: April 25, 2025</p><h2>Felix Geiss</h2><p>First Name Last Name<br/>Fanny-Leicht-Str. 4<br/>70563 Stuttgart-Vaihingen<br/><a href=\\\"mailto:geissq@gmail.com\\\"><div class=\\\"letter\\\"></div><span>E-mail: geissq&#64;gmail.com</span></a></p><h2>Purpose of This Website</h2><p>This website exists solely to showcase my portfolio and provide a means of contacting me.</p><h2>Data Collection and Processing</h2><p>Any personal data you submit (e.g., name, email address, message) via the contact form or by email is used exclusively to respond to your inquiry. Data will not be shared with third parties.</p><h2>Legal Basis</h2><p>Processing is based on Art. 6(1)(b) and (f) of the GDPR.</p><h2>Data Retention</h2><p>Your data will be deleted once it is no longer needed to process your request or if you object to its storage.</p><h2>Your Rights</h2><ul><li>Access, correction, and deletion of your data</li><li>Restriction of processing</li><li>Objection to processing</li><li>Right to data portability</li><li>Complaint to a supervisory authority</li></ul><h2>Contact</h2><p>If you have any questions, please contact me at <a href=\\\"mailto:geissq@gmail.com\\\"><div class=\\\"letter\\\"></div><span>E-mail: geissq&#64;gmail.com</span></a>.</p><h2>Changes</h2><p>This privacy policy may be updated from time to time; the latest version will always be available here.</p>",
+  "legalNotice": {
+    "title": "Imprint",
+    "providerTitle": "Service Provider",
+    "providerName": "Felix Geiss",
+    "addressLines": [
+      "Fanny-Leicht-Str. 4",
+      "70563 Stuttgart-Vaihingen"
+    ],
+    "contactTitle": "Contact",
+    "contactEmail": "geissq@gmail.com"
   }
 }

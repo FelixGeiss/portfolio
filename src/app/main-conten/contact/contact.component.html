@@ -1,14 +1,14 @@
 <div class="header-contact">
-  <h2 [innerHTML]="safeHeader"></h2>
+  <h2 id="contact" [innerHTML]="safeHeader"></h2>
   <img src="assets/img/arrow-down.svg" alt="" />
 </div>
 
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  <!-- Linke Spalte: Intro + Name + E-Mail -->
+
   <div class="form-left">
     <p class="margin-L margin-R" [innerHTML]="safeContent"></p>
 
-    <!-- Name -->
+
     <div class="input-wrapper">
       <input
         class="w-90"
@@ -37,7 +37,7 @@
       />
     </div>
 
-    <!-- E-Mail -->
+ 
     <div class="input-wrapper">
       <input
         class="w-90"
@@ -67,7 +67,7 @@
     </div>
   </div>
 
-  <!-- Rechte Spalte: Kontaktinfos + Nachricht -->
+ 
   <div class="form-right">
     <div class="mail-tel">
       <div>
@@ -85,7 +85,7 @@
       </div>
     </div>
 
-    <!-- Nachricht -->
+
     <div class="input-wrapper">
       <textarea
         class="w-90"
@@ -112,22 +112,21 @@
         class="validation-icon-message"
       />
     </div>
+    
   </div>
 
-  <!-- Datenschutzerklärung -->
+
   <label class="privacy">
     <input type="checkbox" (change)="isCheckt($event)" />
-    <span [innerHTML]="safeAgree"></span>
+    <span class="privacyContent" [innerHTML]="safeAgree"></span>
   </label>
-
-  <!-- Absenden-Button -->
+ 
   <div class="button-container">
     <button type="submit" [disabled]="!isChecked || contactForm.invalid">
-      Senden
+      {{ buttonText }}
     </button>
   </div>
 
-  <!-- Fuß-Elemente / Mobil -->
   <div>
     <div class="arrow-container show w-90">
       <a class="icon" href="#"></a>
