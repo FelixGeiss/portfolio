@@ -16,7 +16,7 @@
   width: 100%;
 
   > div {
-    @include flex-center($jc: space-between, $ai:stretch);
+    @include flex-center($jc:flex-start, $ai:stretch);
     width: 100%;
   
  

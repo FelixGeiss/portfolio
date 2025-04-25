@@ -1,13 +1,19 @@
 <div class="header-contact">
   <h2 id="contact" [innerHTML]="safeHeader"></h2>
-  <img src="assets/img/arrow-down.svg" alt="" />
+  <img src="assets/img/arrow-down.svg" alt="Down arrow icon" />
+</div>
+
+
+<div *ngIf="successMessage" class="feedback feedback--success">
+  {{ successMessage }}
+</div>
+<div *ngIf="errorMessage" class="feedback feedback--error">
+  {{ errorMessage }}
 </div>
 
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-
   <div class="form-left">
     <p class="margin-L margin-R" [innerHTML]="safeContent"></p>
-
 
     <div class="input-wrapper">
       <input
@@ -20,7 +26,8 @@
             : namePlaceholder
         "
         [ngClass]="{
-          error: contactForm.get('name')?.touched && contactForm.get('name')?.invalid
+          error:
+            contactForm.get('name')?.touched && contactForm.get('name')?.invalid
         }"
         (blur)="contactForm.get('name')?.markAsTouched()"
         style="padding-right: 3rem"
@@ -32,12 +39,11 @@
             ? 'assets/img/hook.svg'
             : 'assets/img/exclamation-mark.svg'
         "
-        alt="Validation Icon"
+        alt="Validation icon"
         class="validation-icon"
       />
     </div>
 
- 
     <div class="input-wrapper">
       <input
         class="w-90"
@@ -49,7 +55,9 @@
             : emailPlaceholder
         "
         [ngClass]="{
-          error: contactForm.get('email')?.touched && contactForm.get('email')?.invalid
+          error:
+            contactForm.get('email')?.touched &&
+            contactForm.get('email')?.invalid
         }"
         (blur)="contactForm.get('email')?.markAsTouched()"
         style="padding-right: 3rem"
@@ -61,13 +69,12 @@
             ? 'assets/img/hook.svg'
             : 'assets/img/exclamation-mark.svg'
         "
-        alt="Validation Icon"
+        alt="Validation icon"
         class="validation-icon"
       />
     </div>
   </div>
 
- 
   <div class="form-right">
     <div class="mail-tel">
       <div>
@@ -85,18 +92,20 @@
       </div>
     </div>
 
-
     <div class="input-wrapper">
       <textarea
         class="w-90"
         formControlName="message"
         [placeholder]="
-          contactForm.get('message')?.touched && contactForm.get('message')?.invalid
+          contactForm.get('message')?.touched &&
+          contactForm.get('message')?.invalid
             ? requiredText
             : messagePlaceholder
         "
         [ngClass]="{
-          error: contactForm.get('message')?.touched && contactForm.get('message')?.invalid
+          error:
+            contactForm.get('message')?.touched &&
+            contactForm.get('message')?.invalid
         }"
         (blur)="contactForm.get('message')?.markAsTouched()"
         style="padding-right: 3rem"
@@ -108,19 +117,17 @@
             ? 'assets/img/hook.svg'
             : 'assets/img/exclamation-mark.svg'
         "
-        alt="Validation Icon"
+        alt="Validation icon"
         class="validation-icon-message"
       />
     </div>
-    
   </div>
-
 
   <label class="privacy">
     <input type="checkbox" (change)="isCheckt($event)" />
     <span class="privacyContent" [innerHTML]="safeAgree"></span>
   </label>
- 
+
   <div class="button-container">
     <button type="submit" [disabled]="!isChecked || contactForm.invalid">
       {{ buttonText }}

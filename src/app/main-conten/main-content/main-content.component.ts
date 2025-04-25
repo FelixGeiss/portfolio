@@ -49,7 +49,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
     },
     {
       title: 'Pollo Loco',
-      videoUrl: 'assets/Video/Aufzeichnung el pollo loco.mp4',
+      videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm',
       technologies: ['JavaScript', 'HTML', 'CSS'],
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and salsa to fight against the crazy hen.',
       githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco',
@@ -60,7 +60,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
   projectsDe: Project[] = [
     {
       title: 'Join',
-      videoUrl: 'assets/Video/Aufzeichnung join.mp4',
+      videoUrl: 'assets/Video/Aufzeichnung join.webm',
       technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
       description: 'Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.',
       githubLink: 'https://github.com/NathalieDorendorf/join-406',
@@ -68,7 +68,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
     },
     {
       title: 'Pokedex',
-      videoUrl: 'assets/Video/Aufzeichnung pokedex.mp4',
+      videoUrl: 'assets/Video/Aufzeichnung pokedex.webm',
       technologies: ['JavaScript', 'HTML', 'CSS', 'Pokémon API'],
       description: 'Pokédex-Webanwendung, die die Poke API nutzt, um Pokémon-Daten und -Bilder abzurufen und anzuzeigen.Probier es jetzt aus und entdecke deine Lieblings-Pokémon!',
       githubLink: 'https://github.com/FelixGeiss/pokedex',
@@ -76,7 +76,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
     },
     {
       title: 'Pollo Loco',
-      videoUrl: 'assets/Video/Aufzeichnung el pollo loco.mp4',
+      videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm',
       technologies: ['JavaScript', 'HTML', 'CSS'],
       description: 'Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.',
       githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco',

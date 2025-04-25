@@ -7,7 +7,7 @@ import { LanguageService, Lang } from '../../services/language.service';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, NgStyle],
+  imports: [CommonModule],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
@@ -18,7 +18,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   /** Aktuell angezeigte Projekte */
   displayedProjects: Project[] = [];
-  isRowReverse = false;
   currentLang: Lang = 'de';
   private langSub!: Subscription;
 

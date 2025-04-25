@@ -314,3 +314,24 @@ textarea.error::placeholder {
     text-align: center !important;
   }
 }
+
+.contact-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feedback {
+  @include fonts($fs:$f-s-20);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+
+  &--success {
+    border: 1px solid $turquoise;
+    color: $turquoise;
+  }
+  &--error {
+    border: 1px solid $turquoise;
+    color: #f92103;
+  }
+}

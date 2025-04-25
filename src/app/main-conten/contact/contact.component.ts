@@ -13,7 +13,7 @@ interface ContactContent {
   email: string;
   massage: string;
   requierd: string;
-  button: string;    
+  button: string;
 }
 
 @Component({
@@ -38,6 +38,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     message: new FormControl('', Validators.required)
   });
 
+  // SafeHtml- und Placeholder-Felder
   safeHeader!: SafeHtml;
   safeContent!: SafeHtml;
   safeAgree!: SafeHtml;
@@ -45,7 +46,11 @@ export class ContactComponent implements OnInit, OnDestroy {
   emailPlaceholder!: string;
   messagePlaceholder!: string;
   requiredText!: string;
-  buttonText!: string;            
+  buttonText!: string;
+
+  // Inline-Feedback
+  successMessage: string | null = null;
+  errorMessage: string | null = null;
 
   currentLang: Lang = 'de';
   private langSub!: Subscription;
@@ -71,7 +76,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   private loadContent(lang: Lang): void {
     this.http.get<any>(`assets/content.${lang}.json`)
       .subscribe(json => {
-        const header = json.nav?.contact || 'Contact';
+        const header = json.nav?.contact || (lang === 'de' ? 'Kontakt' : 'Contact');
         this.safeHeader = this.sanitizer.bypassSecurityTrustHtml(header);
 
         const contactSection: ContactContent = json.contact;
@@ -82,7 +87,7 @@ export class ContactComponent implements OnInit, OnDestroy {
         this.emailPlaceholder   = contactSection.email;
         this.messagePlaceholder = contactSection.massage;
         this.requiredText       = contactSection.requierd;
-        this.buttonText         = contactSection.button;   
+        this.buttonText         = contactSection.button;
       });
   }
 
@@ -91,6 +96,9 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
+    this.successMessage = null;
+    this.errorMessage   = null;
+
     if (this.contactForm.valid && this.isChecked) {
       const payload = {
         name: this.contactForm.value.name,
@@ -101,19 +109,26 @@ export class ContactComponent implements OnInit, OnDestroy {
       this.http.post('https://felixgeiss.de/sendMail.php', payload)
         .subscribe({
           next: () => {
-            alert('Deine Nachricht wurde erfolgreich versendet!');
+            this.successMessage = this.currentLang === 'de'
+              ? 'Deine Nachricht wurde erfolgreich versendet!'
+              : 'Your message has been sent successfully!';
             this.contactForm.reset();
             this.isChecked = false;
           },
           error: err => {
-            console.error('Fehler beim Senden:', err);
-            alert('Beim Versenden ist leider ein Fehler aufgetreten. Bitte versuche es später erneut.');
+            console.error('Error sending:', err);
+            this.errorMessage = this.currentLang === 'de'
+              ? 'Beim Versenden ist leider ein Fehler aufgetreten. Bitte versuche es später erneut.'
+              : 'There was an error sending your message. Please try again later.';
           }
         });
     } else {
       this.contactForm.markAllAsTouched();
+
       if (!this.isChecked) {
-        alert('Bitte bestätige die Datenschutzerklärung.');
+        this.errorMessage = this.currentLang === 'de'
+          ? 'Bitte bestätige die Datenschutzerklärung.'
+          : 'Please confirm the privacy policy.';
       }
     }
   }
