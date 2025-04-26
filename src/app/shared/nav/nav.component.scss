@@ -41,7 +41,7 @@ nav {
 span {
   @include flex-center();
   @include fonts($fs: $f-s-22);
-  p {
+  button {
     margin: 0;
     &:hover {
       color: $turquoise;
@@ -127,7 +127,13 @@ span {
   text-decoration: underline;
   background-color: transparent;
 }
+
+.burger-menu ul li button:hover {
+  color: $turquoise;
+  cursor: pointer;
+}
 .logo-mobile {
   @include fonts($fs: $f-s-48, $ff: $font-logo, $fw: $bold);
   display: none;
 }
+

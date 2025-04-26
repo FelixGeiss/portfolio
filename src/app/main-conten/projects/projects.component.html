@@ -2,7 +2,9 @@
   <div
     class="project-container"
   >
-    <div class="image-container ">
+    <div class="image-container fade-in-left"
+    appScrollAnimation
+    >
       <a [href]="project.liveTestLink" target="_blank">
         <video
           #hoveredVideo
@@ -16,7 +18,9 @@
         </video>
       </a>
     </div>
-    <div class="text-container-project">
+    <div class="text-container-project fade-in-right "
+    appScrollAnimation
+    >
       <h3>{{ project.title }}</h3>
       <h5 class="technologies margin-R margin-L">
         {{ project.technologies.join(' | ') }}

@@ -183,6 +183,30 @@
   display: none;
 }
 
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-100px);               
+  transition: opacity 125ms ease-out,
+              transform 125ms ease-out;
+}
+.fade-in-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(100px);                
+  transition: opacity 125ms ease-out,
+              transform 125ms ease-out;
+}
+.fade-in-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
 @media (max-width: 768px) {
   .about-right{
     height: 50vh;

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Project } from './project.model';
 import { Subscription } from 'rxjs';
 import { LanguageService, Lang } from '../../services/language.service';
+import { ScrollAnimationDirective } from '../../services/animation.directive';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ScrollAnimationDirective],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })

@@ -335,9 +335,11 @@ textarea.error::placeholder {
   &--success {
     border: 1px solid $turquoise;
     color: $turquoise;
+
   }
   &--error {
     border: 1px solid $turquoise;
     color: #f92103;
+    
   }
 }

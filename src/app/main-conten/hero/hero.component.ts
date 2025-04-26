@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { CommonModule }   from '@angular/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { LanguageService, Lang } from '../../services/language.service';
+import { ScrollAnimationDirective } from '../../services/animation.directive';
 
 interface HeroContent {
   contactME: string;
@@ -11,6 +13,11 @@ interface HeroContent {
 @Component({
   selector: 'app-hero',
   standalone: true,
+  imports: [
+    CommonModule,        
+    HttpClientModule,    
+    ScrollAnimationDirective
+  ],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })

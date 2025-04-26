@@ -4,6 +4,7 @@ import { HttpClient }             from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Subscription }           from 'rxjs';
 import { LanguageService, Lang }  from '../../services/language.service';
+import { ScrollAnimationDirective } from '../../services/animation.directive';
 
 interface AboutContent {
   whyMeTitle: string;
@@ -18,7 +19,7 @@ interface AboutContent {
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ScrollAnimationDirective ],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
