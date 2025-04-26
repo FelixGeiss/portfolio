@@ -6,6 +6,7 @@
 :host {
   @include flex-center($fd: column);
   max-width: $max-width;
+  box-sizing: border-box;
 }
 
 .header-contact {
@@ -17,7 +18,7 @@
   }
   > h2 {
     @include fonts();
-    scroll-margin-top: 100px;
+    scroll-margin-top: 6.25rem;
   }
 }
 .form-container {
@@ -314,6 +315,7 @@ textarea.error::placeholder {
     text-align: center !important;
   }
   h2 {
+    scroll-margin-top: 280px !important;
     white-space: normal !important;
     text-align: center !important;
   }

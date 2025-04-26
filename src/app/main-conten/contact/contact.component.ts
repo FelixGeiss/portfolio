@@ -150,16 +150,20 @@ export class ContactComponent implements OnInit, OnDestroy {
       });
   }
 
-  /**
-   * Handle successful submission
-   */
   private onSuccess(): void {
     this.successMessage = this.currentLang === 'de'
       ? 'Deine Nachricht wurde erfolgreich versendet!'
       : 'Your message has been sent successfully!';
     this.resetForm();
+    this.successMessageTimer();  // hide success after 4s
   }
-
+  
+  private successMessageTimer(): void {
+    setTimeout(() => {
+      this.successMessage = null;
+    }, 4000);
+  }
+  
   /**
    * Handle submission error
    */
@@ -168,7 +172,16 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.errorMessage = this.currentLang === 'de'
       ? 'Beim Versenden ist leider ein Fehler aufgetreten. Bitte versuche es später erneut.'
       : 'There was an error sending your message. Please try again later.';
+  
+    this.errorMessageTimer();     // hide error after 4s
   }
+  
+  private errorMessageTimer(): void {
+    setTimeout(() => {
+      this.errorMessage = null;
+    }, 4000);
+  }
+  
 
   /**
    * Reset form and checkbox

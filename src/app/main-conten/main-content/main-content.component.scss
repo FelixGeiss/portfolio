@@ -1,7 +1,9 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
 
-
+:host{
+    box-sizing: border-box;
+}
 
 
 #hero, #about, #skills, #projects, #testimonials {
@@ -11,13 +13,14 @@
 h2{
     @include fonts();
     margin-bottom: 1.5rem;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 6.25rem;
     
 }
 
 @media (max-width: 768px){
     h2{
       text-align: center !important;
+      scroll-margin-top: 280px !important
     }
 }    
 

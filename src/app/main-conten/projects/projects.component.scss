@@ -4,14 +4,16 @@
 * {
   transition: all 125ms ease-out;
 }
-
+:host{
+  box-sizing: border-box;
+}
 .project-container {
   @include flex-center($jc: space-between );
   gap: $gap-24;
   width: auto;
   height: auto;
   max-width: $max-width;
-  margin-bottom: 2rem;
+  margin-bottom: 10rem;
 
 }
   .project-container:nth-child(2n) {

@@ -3,7 +3,6 @@
   <img src="assets/img/arrow-down.svg" alt="Down arrow icon" />
 </div>
 
-
 <div *ngIf="successMessage" class="feedback feedback--success">
   {{ successMessage }}
 </div>
@@ -123,8 +122,13 @@
     </div>
   </div>
 
+  
   <label class="privacy">
-    <input type="checkbox" (change)="isCheckt($event)" />
+    <input
+      type="checkbox"
+      [checked]="isChecked"
+      (change)="isCheckt($event)"
+    />
     <span class="privacyContent" [innerHTML]="safeAgree"></span>
   </label>
 
