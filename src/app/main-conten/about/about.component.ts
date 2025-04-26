@@ -23,35 +23,50 @@ interface AboutContent {
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit, OnDestroy {
+  // Holds the content loaded from JSON
   content!: AboutContent;
+
+  // Stores sanitized HTML for each content field
   safe: Record<keyof AboutContent, SafeHtml> = {} as any;
+
+  // Tracks the current language (default is German)
   currentLang: Lang = 'de';
+
+  // Subscription reference to clean up on destroy
   private langSub!: Subscription;
 
   constructor(
-    private http: HttpClient,
-    private sanitizer: DomSanitizer,
-    private languageService: LanguageService
+    private http: HttpClient,                    // For fetching JSON files
+    private sanitizer: DomSanitizer,             // To sanitize HTML content
+    private languageService: LanguageService     // Service to get/set current language
   ) {}
 
   ngOnInit(): void {
-    
+    // Subscribe to language changes
     this.langSub = this.languageService.currentLang$
       .subscribe(lang => {
-        this.currentLang = lang;
-        this.loadContent();
+        this.currentLang = lang;  // Update current language
+        this.loadContent();       // Reload content for the new language
       });
   }
 
   ngOnDestroy(): void {
+    // Unsubscribe to avoid memory leaks
     this.langSub.unsubscribe();
   }
 
+  /**
+   * Loads the about content JSON for the current language,
+   * assigns it to this.content, and sanitizes each field for safe HTML binding.
+   */
   private loadContent() {
+    // Fetch the JSON file matching the current language
     this.http
       .get<{ about: AboutContent }>(`assets/content.${this.currentLang}.json`)
       .subscribe(json => {
         this.content = json.about;
+
+        // Sanitize each HTML string property
         for (const key of Object.keys(this.content) as Array<keyof AboutContent>) {
           this.safe[key] = this.sanitizer.bypassSecurityTrustHtml(this.content[key]);
         }

@@ -55,14 +55,15 @@ form {
 
   .form-right {
     flex: 1 1;
-    @include flex-center($fd: column, $ai: flex-start, $jc: flex-end);
+    @include flex-center($fd: column, $ai: flex-start, $jc: space-between);
     margin-left: 1rem;
     > div:nth-child(1) {
       width: 100%;
       @include flex-center($jc: space-between);
 
       > div:nth-child(1) {
-        @include flex-center($ai: flex-start, $fd: column);
+        @include flex-center($ai: flex-start, $fd: column, $jc:space-between);
+        height: 100%;
       }
     }
 
@@ -184,9 +185,9 @@ form {
         &::after {
           content: "";
           position: absolute;
-          top:    0px;
-          left:   3px;
-          width:  3px;
+          top: 0px;
+          left: 3px;
+          width: 3px;
           height: 6px;
           border: solid $primary-red;
           border-width: 0 2px 2px 0;
@@ -227,7 +228,7 @@ form {
   background-position: center;
   background-size: contain;
   background-origin: content-box;
-  transform: rotate(0deg); 
+  transform: rotate(0deg);
   transition: all 125ms ease-out;
   border: 0.0625rem solid transparent;
 
@@ -252,22 +253,26 @@ form {
       margin-right: 0.5rem;
       width: 1.48rem;
       height: 1.25rem;
-      background: url("../../../assets/img/letter.svg") center center / contain no-repeat;
+      background: url("../../../assets/img/letter.svg") center center / contain
+        no-repeat;
     }
 
     .phone {
       margin-right: 0.5rem;
       width: 1.78rem;
       height: 1.45rem;
-      background: url("../../../assets/img/phone.svg") center center / contain no-repeat;
+      background: url("../../../assets/img/phone.svg") center center / contain
+        no-repeat;
     }
 
     &:hover {
       .letter {
-        background: url("../../../assets/img/letter-hover.svg") center center / contain no-repeat;
+        background: url("../../../assets/img/letter-hover.svg") center center /
+          contain no-repeat;
       }
       .phone {
-        background: url("../../../assets/img/phone-hover.svg") center center / contain no-repeat;
+        background: url("../../../assets/img/phone-hover.svg") center center /
+          contain no-repeat;
       }
     }
   }
@@ -304,7 +309,6 @@ textarea.error::placeholder {
   opacity: 100% !important;
 }
 @media (max-width: 768px) {
-
   h1 {
     white-space: normal !important;
     text-align: center !important;
@@ -321,7 +325,7 @@ textarea.error::placeholder {
 }
 
 .feedback {
-  @include fonts($fs:$f-s-20);
+  @include fonts($fs: $f-s-20);
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 4px;

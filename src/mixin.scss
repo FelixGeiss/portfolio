@@ -1,17 +1,77 @@
 
 
-@mixin flex-center($jc: center, $ai: center, $gp: 0px, $fd: row) {
+/// Zentriert per Flexbox mit Vendor-Prefixes
+/// $jc = justify-content, $ai = align-items, $gp = gap, $fd = flex-direction
+@mixin flex-center(
+  $jc: center,
+  $ai: center,
+  $gp: 0px,
+  $fd: row
+) {
+  // Display
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  justify-content: $jc;
-  align-items: $ai;
-  gap: $gp;
+
+  // Flex-Direction
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal;
+  -ms-flex-direction: $fd;
+  -webkit-flex-direction: $fd;
   flex-direction: $fd;
+
+  // Justify-Content
+  -webkit-box-pack: map-get(
+    (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      between: space-between,
+      around: space-around
+    ),
+    $jc
+  );
+  -ms-flex-pack: $jc;
+  -webkit-justify-content: $jc;
+  justify-content: $jc;
+
+  // Align-Items
+  -webkit-box-align: map-get(
+    (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      baseline: baseline,
+      stretch: stretch
+    ),
+    $ai
+  );
+  -ms-flex-align: $ai;
+  -webkit-align-items: $ai;
+  align-items: $ai;
+
+  // Gap
+  gap: $gp;
 }
 
-@mixin fonts($ff: $font-primary, $fc: $primary-red, $fw: $medium,$fs:$f-s-54,$lh:$l-height) {
-  font-size:$fs;
-  font-weight: $fw;
+/// Schrift-Styling mit Font-Smoothing für WebKit/Firefox
+/// $ff = font-family, $fc = color, $fw = font-weight, $fs = font-size, $lh = line-height
+@mixin fonts(
+  $ff: $font-primary,
+  $fc: $primary-red,
+  $fw: $medium,
+  $fs: $f-s-54,
+  $lh: $l-height
+) {
   font-family: $ff;
-  line-height: $lh;
-  color: $fc;
+  font-size:    $fs;
+  line-height:  $lh;
+  font-weight:  $fw;
+  color:        $fc;
+
+  // Font-Smoothing
+  -webkit-font-smoothing: antialiased;   // MacOS / WebKit
+  -moz-osx-font-smoothing: grayscale;    // Firefox auf MacOS
+  text-rendering: optimizeLegibility;    // improved kerning and legibility
 }

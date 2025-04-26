@@ -28,62 +28,11 @@ import { Project } from '../projects/project.model';
   styleUrls: ['./main-content.component.scss']
 })
 export class MainContentComponent implements OnInit, OnDestroy {
+  // Localized project lists
+  projectsEn: Project[] = this.getProjects('en');
+  projectsDe: Project[] = this.getProjects('de');
 
-
-  projectsEn: Project[] = [
-    {
-      title: 'Join',
-      videoUrl: 'assets/Video/Aufzeichnung join.mp4',
-      technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      githubLink: 'https://github.com/NathalieDorendorf/join-406',
-      liveTestLink: 'http://join.felixgeiss.de/index.html'
-    },
-    {
-      title: 'Pokedex',
-      videoUrl: 'assets/Video/Aufzeichnung pokedex.mp4',
-      technologies: ['JavaScript', 'HTML', 'CSS', 'Pokémon API'],
-      description: 'Pokedex web application that uses the Poke API to fetch and display Pokémon data and images.Try it now and discover your favorite Pokémon!',
-      githubLink: 'https://github.com/FelixGeiss/pokedex',
-      liveTestLink: 'http://pokedex.felixgeiss.de/'
-    },
-    {
-      title: 'Pollo Loco',
-      videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm',
-      technologies: ['JavaScript', 'HTML', 'CSS'],
-      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and salsa to fight against the crazy hen.',
-      githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco',
-      liveTestLink: 'http://el-pollo-loco.felixgeiss.de/'
-    }
-  ];
-
-  projectsDe: Project[] = [
-    {
-      title: 'Join',
-      videoUrl: 'assets/Video/Aufzeichnung join.webm',
-      technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
-      description: 'Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.',
-      githubLink: 'https://github.com/NathalieDorendorf/join-406',
-      liveTestLink: 'http://join.felixgeiss.de/index.html'
-    },
-    {
-      title: 'Pokedex',
-      videoUrl: 'assets/Video/Aufzeichnung pokedex.webm',
-      technologies: ['JavaScript', 'HTML', 'CSS', 'Pokémon API'],
-      description: 'Pokédex-Webanwendung, die die Poke API nutzt, um Pokémon-Daten und -Bilder abzurufen und anzuzeigen.Probier es jetzt aus und entdecke deine Lieblings-Pokémon!',
-      githubLink: 'https://github.com/FelixGeiss/pokedex',
-      liveTestLink: 'http://pokedex.felixgeiss.de/'
-    },
-    {
-      title: 'Pollo Loco',
-      videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm',
-      technologies: ['JavaScript', 'HTML', 'CSS'],
-      description: 'Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.',
-      githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco',
-      liveTestLink: 'http://el-pollo-loco.felixgeiss.de/'
-    }
-  ];
-
+  // Sanitized HTML for section heading
   safeMyProjects!: SafeHtml;
   currentLang: Lang = 'de';
   private langSub!: Subscription;
@@ -94,25 +43,80 @@ export class MainContentComponent implements OnInit, OnDestroy {
     private languageService: LanguageService
   ) {}
 
+  /**
+   * Subscribe to language changes
+   */
   ngOnInit(): void {
     this.langSub = this.languageService.currentLang$
-      .subscribe(lang => {
-        this.currentLang = lang;
-        this.loadProjectHeading(lang);
-      });
+      .subscribe(lang => this.onLangChange(lang));
   }
 
+  /**
+   * Unsubscribe on destroy
+   */
   ngOnDestroy(): void {
     this.langSub.unsubscribe();
   }
 
+  /**
+   * Handle language switch
+   */
+  private onLangChange(lang: Lang): void {
+    this.currentLang = lang;
+    this.loadProjectHeading(lang);
+  }
+
+  /**
+   * Fetch and sanitize heading from JSON
+   */
   private loadProjectHeading(lang: Lang): void {
-    this.http
-      .get<{ project: { myProjects: string } }>(`assets/content.${lang}.json`)
-      .subscribe(json => {
-        this.safeMyProjects = this.sanitizer.bypassSecurityTrustHtml(
-          json.project.myProjects
-        );
-      });
+    this.http.get<{ project: { myProjects: string } }>(
+      `assets/content.${lang}.json`
+    ).subscribe(json => this.setHeading(json.project.myProjects));
+  }
+
+  /**
+   * Set sanitized heading
+   */
+  private setHeading(html: string): void {
+    this.safeMyProjects = this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+
+  /**
+   * Return project array based on lang
+   */
+  private getProjects(lang: Lang): Project[] {
+    const common = [
+      { title: 'Join', videoUrl: 'assets/Video/Aufzeichnung join.webm', technologies: ['Angular','TypeScript','HTML','CSS','Firebase'], githubLink: 'https://github.com/NathalieDorendorf/join-406', liveTestLink: 'http://join.felixgeiss.de/index.html' },
+      { title: 'Pokedex', videoUrl: 'assets/Video/Aufzeichnung pokedex.webm', technologies: ['JavaScript','HTML','CSS','Pokémon API'], githubLink: 'https://github.com/FelixGeiss/pokedex', liveTestLink: 'http://pokedex.felixgeiss.de/' },
+      { title: 'Pollo Loco', videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm', technologies: ['JavaScript','HTML','CSS'], githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco', liveTestLink: 'http://el-pollo-loco.felixgeiss.de/' }
+    ];
+    return lang === 'de'
+      ? common.map(proj => ({ ...proj, description: this.getGermanDesc(proj.title) }))
+      : common.map(proj => ({ ...proj, description: this.getEnglishDesc(proj.title) }));
+  }
+
+  /**
+   * Map English descriptions
+   */
+  private getEnglishDesc(title: string): string {
+    switch (title) {
+      case 'Join': return 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.';
+      case 'Pokedex': return 'Pokedex web application that uses the Poke API to fetch and display Pokémon data and images. Try it now and discover your favorite Pokémon!';
+      case 'Pollo Loco': return 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and salsa to fight against the crazy hen.';
+    }
+    return '';
+  }
+
+  /**
+   * Map German descriptions
+   */
+  private getGermanDesc(title: string): string {
+    switch (title) {
+      case 'Join': return 'Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.';
+      case 'Pokedex': return 'Pokédex-Webanwendung, die die Poke API nutzt, um Pokémon-Daten und -Bilder abzurufen und anzuzeigen. Probier es jetzt aus und entdecke deine Lieblings-Pokémon!';
+      case 'Pollo Loco': return 'Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.';
+    }
+    return '';
   }
 }
