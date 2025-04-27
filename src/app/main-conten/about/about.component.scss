@@ -6,6 +6,7 @@
   width: 100%;
   margin-bottom: 10rem;
   box-sizing: border-box;
+
 }
 
 .main-container {
@@ -15,10 +16,10 @@
   height: 100%;
 }
 .about-right {
+
   @include flex-center($fd: column, $ai: flex-end, $jc: space-between);
   width: 55%;
-  height: 87vh;
-  min-height: 553.312px;
+  min-height: calc(100vh - 6.599625rem);
   > div:nth-child(1) {
     margin-bottom: 1.5rem;
   }
@@ -162,8 +163,8 @@
 
 .abot-left {
   .img-container {
-    width: 26rem;
-    height: 26rem;
+    width: 31rem;
+    height: 31rem;
     min-width: 157.41px;
     > img {
       display: block;

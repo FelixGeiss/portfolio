@@ -183,21 +183,37 @@ h6,
 p {
   margin: 0;
 }
+
+@media (max-width: 1300px){
+  main{
+    margin: 0 3rem!important;
+  }
+}
 @media (max-width: 1200px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
+  .about-right{
+    width: 100% !important;
+  }
+  .icon-container{
+    width: 100% !important;
+  }
+
 }
-@media (max-width: 992px) {
+
+
+@media (max-width: 1030px) {
   html {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
-@media (max-width: 768px) {
 
+
+@media (max-width: 774px) {
   html {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   main {

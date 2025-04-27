@@ -1,9 +1,6 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
 
-* {
-  transition: all 125ms ease-out;
-}
 :host{
   box-sizing: border-box;
 }
@@ -14,6 +11,7 @@
   height: auto;
   max-width: $max-width;
   margin-bottom: 10rem;
+  overflow-x: hidden;
 
 }
   .project-container:nth-child(2n) {

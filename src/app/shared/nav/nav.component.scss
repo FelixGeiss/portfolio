@@ -137,3 +137,8 @@ span {
   display: none;
 }
 
+@media (max-width: 1300px){
+  nav{
+    margin: $gap-24 3rem!important;
+  }
+}
