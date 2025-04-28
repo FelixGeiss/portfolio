@@ -5,6 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { LanguageService, Lang } from '../../services/language.service';
+import { ScrollAnimationDirective } from '../../services/animation.directive';
 
 interface ContactContent {
   contacContent: string;
@@ -19,7 +20,7 @@ interface ContactContent {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule,ScrollAnimationDirective],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })

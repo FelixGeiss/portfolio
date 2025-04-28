@@ -82,21 +82,30 @@
       @include flex-center($fd: column);
       height: 3rem;
     }
-
-    &:hover .elipse {
-      display: flex;
+    .elipse {
+      @include flex-center();
+      background-image: url("../../../assets/img/locaishen-ellipse.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 1.1875rem;
+      height: 0.5rem;
+  
+      opacity: 0;                       
+      visibility: hidden;                
+      pointer-events: none;              
+      transition: opacity 125ms ease-out, visibility 0s linear 125ms;
     }
+  
+   
+    &:hover .elipse {
+      opacity: 1;                          
+      visibility: visible;                
+      pointer-events: auto;              
+      transition-delay: 0s;                
+    }
+  
   }
 
-  .elipse {
-    @include flex-center();
-    display: none;
-    background-image: url("../../../assets/img/locaishen-ellipse.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 1.1875rem;
-    height: 0.5rem;
-  }
 
   .suitcase-container {
     margin-left: 21.476563rem;
@@ -132,15 +141,21 @@
       margin-right: 1rem;
     }
 
-    > img:nth-child(2) {
-      display: none;
-      pointer-events: none;
-      transition: all 125ms ease-out;
-    }
+ 
+  > img:nth-child(2) {
+    opacity: 0;
+    visibility: hidden;            
+    pointer-events: none;
+    transition: opacity 125ms ease-out, visibility 0s linear 125ms;
+  }
 
-    &:hover > img:nth-child(2) {
-      display: block;
-    }
+
+  &:hover > img:nth-child(2) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;          
+  }
 
     .signal {
       position: absolute;
@@ -164,6 +179,7 @@
 }
 
 .abot-left {
+  overflow-x: hidden;
   .img-container {
     width: 31rem;
     height: 31rem;

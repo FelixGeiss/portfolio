@@ -1,9 +1,8 @@
-import { Component,HostListener} from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavComponent } from './shared/nav/nav.component';
-
 
 @Component({
   selector: 'app-root',
@@ -15,9 +14,8 @@ import { NavComponent } from './shared/nav/nav.component';
     NavComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']   // <-- hier: styleUrls (mit s)
 })
 export class AppComponent {
   title = 'portfolio';
-
 }

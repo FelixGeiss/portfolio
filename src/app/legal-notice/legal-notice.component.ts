@@ -1,3 +1,4 @@
+// legal-notice.component.ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
@@ -21,22 +22,17 @@ interface LegalNoticeData {
   styleUrls: ['./legal-notice.component.scss']
 })
 export class LegalNoticeComponent implements OnInit, OnDestroy {
-  // Data model for legal notice
-  data!: LegalNoticeData;
+  // Jetzt nullable initialisiert
+  data: LegalNoticeData | null = null;
 
-  // Subscription for language changes
   private sub!: Subscription;
-
-  // Current selected language
   currentLang: Lang = 'de';
 
-  // Inject HttpClient and LanguageService
   constructor(
     private http: HttpClient,
     private langSvc: LanguageService
   ) {}
 
-  // Subscribe to language changes on initialization
   ngOnInit(): void {
     this.sub = this.langSvc.currentLang$
       .subscribe(lang => {
@@ -45,12 +41,10 @@ export class LegalNoticeComponent implements OnInit, OnDestroy {
       });
   }
 
-  // Unsubscribe to prevent memory leaks
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 
-  // Fetch legal notice data based on current language
   private loadData(): void {
     this.http
       .get<{ legalNotice: LegalNoticeData }>(
