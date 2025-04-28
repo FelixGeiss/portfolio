@@ -12,11 +12,10 @@
 
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <div class="form-left">
-    <p class="margin-L margin-R" [innerHTML]="safeContent"></p>
+    <p class="" [innerHTML]="safeContent"></p>
 
     <div class="input-wrapper">
       <input
-        class="w-90"
         type="text"
         formControlName="name"
         [placeholder]="
@@ -45,7 +44,6 @@
 
     <div class="input-wrapper">
       <input
-        class="w-90"
         type="email"
         formControlName="email"
         [placeholder]="
@@ -75,7 +73,7 @@
   </div>
 
   <div class="form-right">
-    <div class="mail-tel">
+    <div class="mail-tel display-none">
       <div>
         <a href="mailto:geissq@gmail.com">
           <div class="letter"></div>
@@ -93,7 +91,6 @@
 
     <div class="input-wrapper">
       <textarea
-        class="w-90"
         formControlName="message"
         [placeholder]="
           contactForm.get('message')?.touched &&
@@ -139,7 +136,7 @@
   </div>
 
   <div>
-    <div class="arrow-container show w-90">
+    <div class="arrow-container show">
       <a class="icon" href="#"></a>
     </div>
   </div>

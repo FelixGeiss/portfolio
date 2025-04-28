@@ -1,8 +1,6 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
-* {
-  transition: all 125ms ease-out;
-}
+
 :host {
   @include flex-center();
   width: 100%;
@@ -27,7 +25,7 @@
 
 .skills-icons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   width: 100%;
   justify-items: center;
   gap: 3rem;
@@ -86,7 +84,12 @@
   }
 }
 @media (max-width: 768px) {
-
+  .main-container{
+    width: 91%;
+  }
+  .skills-icons{
+    gap: 1rem !important;
+  }
   h1 {
     white-space: normal !important;
     text-align: center !important;
@@ -94,17 +97,10 @@
   h2 {
     white-space: normal !important;
     text-align: center !important;
-    scroll-margin-top: 280px !important;
-  
   }
+
   h6{
     display: none !important;
-  }
-}
-@media (min-width: 1062px) and (max-width: 1360px) {
-  .challenge-container p {
-    top: 113%;
-    left: -50%!important;
   }
 }
 

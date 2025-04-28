@@ -1,8 +1,5 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
-*{
-  transition: all 125ms ease-out;
-}
 
 :host {
   @include flex-center($fd:column);
@@ -23,6 +20,7 @@
  
     > div:first-child {
       @include flex-center();
+     
     }
   }
   img {
@@ -58,4 +56,11 @@ p {
     white-space: normal !important;
     text-align: center !important;
   }
+
+  h4{
+    width: 91% !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
 }
+

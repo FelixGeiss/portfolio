@@ -28,23 +28,49 @@
       <span></span><span></span><span></span>
     </button>
     <ul *ngIf="menuOpen">
-      <li><a class="show" href="#about" [innerHTML]="safeNav.whyMe"></a></li>
-      <li><a class="show" href="#skills" [innerHTML]="safeNav.skills"></a></li>
       <li>
-        <a class="show" href="#projects" [innerHTML]="safeNav.projects"></a>
+        <a
+          class="show"
+          href="#about"
+          [innerHTML]="safeNav.whyMe"
+          (click)="closeMenu()"
+        ></a>
       </li>
       <li>
-        <a class="show" href="#contact" [innerHTML]="safeNav.contact"></a>
+        <a
+          class="show"
+          href="#skills"
+          [innerHTML]="safeNav.skills"
+          (click)="closeMenu()"
+        ></a>
       </li>
-      <li >
-        <button class="show"
+      <li>
+        <a
+          class="show"
+          href="#projects"
+          [innerHTML]="safeNav.projects"
+          (click)="closeMenu()"
+        ></a>
+      </li>
+      <li>
+        <a
+          class="show"
+          href="#contact"
+          [innerHTML]="safeNav.contact"
+          (click)="closeMenu()"
+        ></a>
+      </li>
+      <li>
+        <button
+          class="show"
           [class.active]="(currentLang$ | async) === 'de'"
           (click)="switchLang('de')"
         >
           DE
         </button>
         |
-        <button class="show"
+        <button
+          class="show"
           [class.active]="(currentLang$ | async) === 'en'"
           (click)="switchLang('en')"
         >

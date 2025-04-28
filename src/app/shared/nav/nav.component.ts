@@ -54,6 +54,11 @@ export class NavComponent implements OnInit, OnDestroy {
     this.menuOpen = !this.menuOpen;
   }
 
+  // Close the mobile menu
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
+
   // Switch application language
   switchLang(lang: Lang): void {
     this.languageService.setLang(lang);

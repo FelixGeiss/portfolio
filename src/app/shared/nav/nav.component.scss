@@ -31,6 +31,7 @@ nav {
     }
 
     > li:not(:first-child) {
+      transition: all 125ms ease-out;
       &:hover {
         color: $turquoise;
       }
@@ -43,6 +44,7 @@ span {
   @include fonts($fs: $f-s-22);
   button {
     margin: 0;
+    transition: all 125ms ease-out;
     &:hover {
       color: $turquoise;
       cursor: pointer;

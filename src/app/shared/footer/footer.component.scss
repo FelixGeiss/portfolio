@@ -1,8 +1,6 @@
 @import "../../../mixin.scss";
 @import "../../../styles.scss";
-* {
-  transition: all 125ms ease-out;
-}
+
 :host {
   @include flex-center($jc: space-between);
   width: 100%;
@@ -24,6 +22,7 @@
     a {
       @include fonts($fs: $f-s-14);
       margin: 5px;
+      transition: all 125ms ease-out;
       &:hover {
         text-decoration: underline;
       }
@@ -46,6 +45,7 @@
   height: 1.875rem;
   background-repeat: no-repeat;
   background-size: contain;
+  transition: all 125ms ease-out;
 
   &:hover {
     background-image: url("../../../assets/img/github-hover.svg");
@@ -58,6 +58,7 @@
   height: 1.875rem;
   background-repeat: no-repeat;
   background-size: contain;
+  transition: all 125ms ease-out;
 
   &:hover {
     background-image: url("../../../assets/img/email-hover.svg");
@@ -70,13 +71,14 @@
   height: 1.875rem;
   background-repeat: no-repeat;
   background-size: contain;
+  transition: all 125ms ease-out;
 
   &:hover {
     background-image: url("../../../assets/img/linkedin-hover.svg");
   }
 }
 
-.icon-container {
+.icon-container-footer {
   @include flex-center();
   height: 100%;
   gap: $gap-24;

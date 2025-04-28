@@ -19,7 +19,7 @@
 
   @include flex-center($fd: column, $ai: flex-end, $jc: space-between);
   width: 55%;
-  min-height: calc(100vh - 6.599625rem);
+  height:100% ;
   > div:nth-child(1) {
     margin-bottom: 1.5rem;
   }
@@ -51,6 +51,7 @@
     display: inline-block;
     padding: 0.9375rem 1.875rem;
     background-color: $turquoise;
+    transition: all 125ms ease-out;
   }
 
   a:hover {
@@ -134,6 +135,7 @@
     > img:nth-child(2) {
       display: none;
       pointer-events: none;
+      transition: all 125ms ease-out;
     }
 
     &:hover > img:nth-child(2) {
@@ -209,15 +211,12 @@
 
 
 @media (max-width: 768px) {
-  .about-right{
-    height: 50vh;
-  }
+
   h1 {
     white-space: normal !important;
     text-align: center !important;
   }
   h2 {
-    scroll-margin-top: 280px !important;
     white-space: normal !important;
     text-align: center !important;
   }

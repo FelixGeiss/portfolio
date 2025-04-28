@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 .project-container {
-  @include flex-center($jc: space-between );
+  @include flex-center($jc: space-between, $ai:flex-start);
   gap: $gap-24;
   width: auto;
   height: auto;
@@ -21,7 +21,7 @@
   position: relative;
   width: auto; 
   height: auto; 
-  width: 36.75rem;
+  max-width: 36.75rem;
 }
 
 .image-container video {
@@ -57,7 +57,7 @@ h5{
   a:first-child {
     color: $primary-red;
     border: solid 1px $turquoise;
-
+    transition: all 125ms ease-out;
     &:hover{
       color:$turquoise ; 
     }
@@ -67,6 +67,7 @@ h5{
     margin-left: $gap-10;
    background-color:$turquoise ;
    color:$backround-blue ;
+   transition: all 125ms ease-out;
    &:hover{
     color:$primary-red ; 
   }
@@ -97,7 +98,9 @@ h5{
   opacity: 1;
   transform: translateX(0);
 }
-
+.mobile-video{
+  display: none;
+}
 @media (max-width: 768px) {
 
   h1 {
@@ -107,5 +110,15 @@ h5{
   h2 {
     white-space: normal !important;
     text-align: center !important;
+  }
+  .text-container-project{
+    width: 91%;
+  }
+  .video{
+    display: none;
+  }
+  .mobile-video{
+    display: block;
+    margin: 3rem 0;
   }
 }

@@ -50,12 +50,6 @@ $l-height: 120%;
 }
 
 @font-face {
-  font-family: "handjet";
-  src: url("assets/fonts/Handjet-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
   font-family: "RobotoMono";
   src: url("assets/fonts/RobotoMono-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -174,79 +168,35 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1,h2,h3,h4,h5,h6,
 p {
   margin: 0;
 }
-
-@media (max-width: 1300px){
+@media (max-width: 1400px){
   main{
-    margin: 0 3rem!important;
+    margin: 0 3rem;
+  }
+  footer {
+    margin: 0 3rem;
   }
 }
 @media (max-width: 1200px) {
   html {
     font-size: 14px;
-  }
-  .about-right{
-    width: 100% !important;
-  }
-  .icon-container{
-    width: 100% !important;
-  }
-
+  } 
 }
-
-
-@media (max-width: 1030px) {
+@media (max-width:992px) {
   html {
     font-size: 11px;
   }
 }
 
-
-
-@media (max-width: 774px) {
-  html {
-    font-size: 13px;
-  }
+@media (max-width: 768px) {
 
   main {
     margin: 0;
-  }
 
-
-  .margin-L {
-    margin-left: 20px;
   }
-  .margin-R {
-    margin-right: 20px;
-  }
-  .w-90 {
-    width: 90% !important;
-  }
-  header {
-    flex-direction: column-reverse !important;
-    align-items: center !important;
-    .icon {
-      display: none !important;
-    }
-    a {
-      display: none !important;
-    }
-    .hero-text {
-      align-items: center !important;
-    }
-    .hero-left {
-      width: fit-content;
-    }
-  }
-
   .main-container {
     align-items: center !important;
     flex-direction: column !important;
@@ -257,14 +207,11 @@ p {
       display: none !important;
     }
 
-    > h4 {
-      display: none;
-    }
   }
   .icon-container {
+    width: 100% !important;
     display: flex;
     flex-direction: column;
-    width: 100% !important;
 
     > div:nth-child(1) {
       flex-direction: column;
@@ -276,7 +223,7 @@ p {
   }
   .about-right {
     align-items: center !important;
-    width: 100% !important;
+    width: 91% !important;
     > div:nth-child(1) {
       p {
         text-align: center;
@@ -296,9 +243,7 @@ p {
     display: none;
   }
 
-  .arrow-curve-right {
-    display: none;
-  }
+ 
   .suitcase-container {
     margin-left: 0 !important;
   }
@@ -333,7 +278,8 @@ p {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100% !important;
+    width: 91%;
+    
     h5 {
       text-align: center;
     }
@@ -344,6 +290,7 @@ p {
     padding: 20px;
     p {
       width: 239px !important;
+      padding: 20px;
     }
   }
   .text-container-main {
@@ -359,7 +306,7 @@ p {
   }
   form {
     flex-direction: column !important;
-    width: 100%;
+    width:91%;
   }
   .form-right {
     margin: 0 !important;
@@ -388,9 +335,6 @@ p {
       margin-bottom: 10px;
       margin-right: 0px !important;
     }
-  }
-  .mail-tel {
-    display: none !important;
   }
   .privacy{
     justify-content: center !important;
