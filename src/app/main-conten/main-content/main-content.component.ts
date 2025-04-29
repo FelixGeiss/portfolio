@@ -86,15 +86,39 @@ export class MainContentComponent implements OnInit, OnDestroy {
    * Return project array based on lang
    */
   private getProjects(lang: Lang): Project[] {
-    const common = [
-      { title: 'Join', videoUrl: 'assets/Video/Aufzeichnung join.webm', technologies: ['Angular','TypeScript','HTML','CSS','Firebase'], githubLink: 'https://github.com/NathalieDorendorf/join-406', liveTestLink: 'http://join.felixgeiss.de/index.html' },
-      { title: 'Pokedex', videoUrl: 'assets/Video/Aufzeichnung pokedex.webm', technologies: ['JavaScript','HTML','CSS','Pokémon API'], githubLink: 'https://github.com/FelixGeiss/pokedex', liveTestLink: 'http://pokedex.felixgeiss.de/' },
-      { title: 'Pollo Loco', videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm', technologies: ['JavaScript','HTML','CSS'], githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco', liveTestLink: 'http://el-pollo-loco.felixgeiss.de/' }
+    const common: Omit<Project, 'description'>[] = [
+      {
+        title: 'Join',
+        videoUrl: 'assets/Video/Aufzeichnung join.webm',
+        technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
+        githubLink: 'https://github.com/FelixGeiss/join',
+        liveTestLink: 'http://join.felixgeiss.de/index.html'
+      },
+      {
+        title: 'Pollo Loco',
+        videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm',
+        technologies: ['JavaScript', 'HTML', 'CSS'],
+        githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco',
+        liveTestLink: 'http://el-pollo-loco.felixgeiss.de/'
+      },
+      {
+        title: 'Pokedex',
+        videoUrl: 'assets/Video/Aufzeichnung pokedex.webm',
+        technologies: ['JavaScript', 'HTML', 'CSS', 'Pokémon API'],
+        githubLink: 'https://github.com/FelixGeiss/pokedex',
+        liveTestLink: 'http://pokedex.felixgeiss.de/'
+      }
     ];
-    return lang === 'de'
-      ? common.map(proj => ({ ...proj, description: this.getGermanDesc(proj.title) }))
-      : common.map(proj => ({ ...proj, description: this.getEnglishDesc(proj.title) }));
+  
+    return common.map(proj => ({
+      ...proj,
+      description:
+        lang === 'de'
+          ? this.getGermanDesc(proj.title)
+          : this.getEnglishDesc(proj.title)
+    }));
   }
+  
 
   /**
    * Map English descriptions

@@ -192,10 +192,16 @@ p {
 }
 
 @media (max-width: 768px) {
-
+  html {
+    font-size: 14px;
+  }
   main {
     margin: 0;
 
+  }
+
+  h2{
+    font-size: 3rem !important;
   }
   .main-container {
     align-items: center !important;
@@ -223,7 +229,7 @@ p {
   }
   .about-right {
     align-items: center !important;
-    width: 91% !important;
+    width: 90% !important;
     > div:nth-child(1) {
       p {
         text-align: center;
@@ -272,13 +278,13 @@ p {
   app-testimonials {
     overflow-x: auto;
     align-items: flex-start !important;
-    width: 97.9vw;
+    width: 100vw;
   }
   .text-container-project {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 91%;
+    width: 90%;
     
     h5 {
       text-align: center;
@@ -301,12 +307,12 @@ p {
   .header-contact {
     justify-content: center !important;
     img {
-      display: none;
+      display: none!important;
     }
   }
   form {
     flex-direction: column !important;
-    width:91%;
+    width:80%;
   }
   .form-right {
     margin: 0 !important;

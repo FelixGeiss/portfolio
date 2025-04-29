@@ -12,6 +12,8 @@
 .header-contact {
   @include flex-center($jc: flex-start, $ai: flex-end);
   width: 100%;
+  overflow-x: hidden;   
+  overflow-y: visible;  
   > img {
     width: 5rem;
     margin-left: 1rem;
@@ -355,6 +357,7 @@ textarea.error::placeholder {
 }
 
 .fade-in-right {
+  overflow-x: hidden;
   opacity: 0;
   transform: translateX(100px);
   transition: opacity 125ms ease-out, transform 125ms ease-out;

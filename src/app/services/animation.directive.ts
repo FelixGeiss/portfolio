@@ -24,7 +24,7 @@ import {
             this.observer.unobserve(this.el.nativeElement);
           }
         },
-        { threshold: 0.5 }
+        { threshold: 0.3 }
       );
       this.observer.observe(this.el.nativeElement);
     }

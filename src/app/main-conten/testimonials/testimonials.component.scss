@@ -27,7 +27,7 @@
     width: 5.375rem;
   }
 
-  /* Arrow-Icon: einmaliges Slide-In bei Sichtbarkeit */
+
   .arrow-icon {
     display: inline-block;
     transform: translateX(-100%);
@@ -35,7 +35,7 @@
     transition: transform 125ms ease-out, opacity 125ms ease-out;
   }
 
-  /* Slide-In auslösen, wenn im View: einmalig */
+
   &.in-view .arrow-icon {
     transform: translateX(0);
     opacity: 1;
@@ -70,7 +70,7 @@ p {
   }
 
   h4 {
-    width: 91% !important;
+    width: 90% !important;
     text-align: center !important;
     white-space: normal !important;
   }

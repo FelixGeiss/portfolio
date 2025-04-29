@@ -55,85 +55,97 @@ span {
 .burger-menu {
   display: none;
   position: relative;
+
+  &.open {
+
+    ul {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  button {
+    @include flex-center($fd: column, $jc: space-around);
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 4px;
+      background: $primary-red;
+      border-radius: 2px;
+      transition: all 125ms ease-out;
+    }
+  }
+
+ 
+  &.open button span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  &.open button span:nth-child(2) {
+    opacity: 0;
+  }
+  &.open button span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+      179deg,
+      rgba(11, 4, 45, 1) 0%,
+      rgba(40, 22, 128, 1) 100%
+    );
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    @include flex-center($fd: column, $jc: flex-end);
+    height: 280px;
+
+ 
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 125ms ease-out, opacity 125ms ease-out;
+
+    li {
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        @include fonts($fs: $f-s-22);
+        display: block;
+
+        &:hover {
+          text-decoration: underline;
+          background-color: transparent;
+        }
+      }
+
+      button:hover {
+        color: $turquoise;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
-.burger-menu button {
-  @include flex-center($fd:column, $jc:space-around);
-  display: none;
-  position: relative;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 100;
-}
-
-.burger-menu button span {
-  display: block;
-  width: 100%;
-  height: 4px;
-  background: $primary-red;
-  border-radius: 2px;
-  transition: all 125ms ease-out;
-}
-
-.burger-menu.open button span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
-}
-
-.burger-menu.open button span:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu.open button span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-.burger-menu ul {
-  position: fixed;
-  top: 0px;
-  left: 0;
-  width: 100vw;
-  max-width: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: #0b042d;
-  background: linear-gradient(
-    179deg,
-    rgba(11, 4, 45, 1) 0%,
-    rgba(40, 22, 128, 1) 100%
-  );
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  @include flex-center($fd: column, $jc: flex-end);
-  height: 280px;
-}
-
-.burger-menu ul li {
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.burger-menu ul li a {
-  text-decoration: none;
-  @include fonts($fs: $f-s-22);
-  display: block;
-}
-
-.burger-menu ul li a:hover {
-  text-decoration: underline;
-  background-color: transparent;
-}
-
-.burger-menu ul li button:hover {
-  color: $turquoise;
-  cursor: pointer;
-}
 .logo-mobile {
   @include fonts($fs: $f-s-48, $ff: $font-logo, $fw: $bold);
   display: none;
