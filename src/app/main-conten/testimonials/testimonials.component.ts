@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { LanguageService, Lang } from '../../services/language.service';
+import { ScrollAnimationDirective } from '../../services/animation.directive';
 
 interface TestimonialContent {
   header: string;
@@ -21,7 +22,7 @@ interface TestimonialContent {
 @Component({
   selector: 'app-testimonials',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ScrollAnimationDirective],
   templateUrl: './testimonials.component.html',
   styleUrls: ['./testimonials.component.scss']
 })

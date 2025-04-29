@@ -363,3 +363,24 @@ textarea.error::placeholder {
   opacity: 1;
   transform: translateX(0);
 }
+
+.header-contact {
+
+  overflow: visible;
+
+
+  .arrow-icon {
+    display: inline-block;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 125ms ease-out, opacity 125ms ease-out;
+  }
+
+  
+  &.in-view .arrow-icon {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+

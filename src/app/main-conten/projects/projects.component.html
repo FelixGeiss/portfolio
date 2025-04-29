@@ -28,8 +28,8 @@
             #mobileVideo
             muted
             preload="metadata"
-            (mouseenter)="playVideo(hoveredVideo)"
-            (mouseleave)="resetVideo(hoveredVideo)"
+            (mouseenter)="playVideo(mobileVideo)"
+            (mouseleave)="resetVideo(mobileVideo)"
           >
             <source [src]="project.videoUrl" type="video/webm" />
             Your browser does not support the video tag.

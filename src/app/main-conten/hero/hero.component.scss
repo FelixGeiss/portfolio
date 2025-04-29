@@ -79,7 +79,7 @@ a {
 .img-container {
   
   img {
-    height: calc(100vh - 7rem);
+    height: calc(100vh - 6rem);
     object-fit: cover;
     max-height: 800px;
   }
@@ -119,10 +119,11 @@ h2 {
 
 @media (max-width: 1200px) {
   header {
-    min-height: calc(100vh - 7rem);
+    min-height: calc(100vh - 6rem);
     flex-direction: column-reverse !important;
     align-items: center !important;
-    margin: 0 3rem;
+    justify-content: center!important;
+    margin: 0 1rem;
     .img-container {
      
       img {

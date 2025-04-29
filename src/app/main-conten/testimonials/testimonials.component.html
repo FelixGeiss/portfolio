@@ -1,20 +1,25 @@
 
-<div class="main-container" *ngIf="safe.header">
-  <h4 [innerHTML]="safe.header"></h4>
-  <div class="text-container-main">
-    <div>
-      <img src="assets/img/arrow-curve-left-big.svg" alt="" />
+<ng-container *ngIf="safe.header">
+  <div class="main-container" appScrollAnimation>
+    <h4 [innerHTML]="safe.header"></h4>
+    <div class="text-container-main">
+      <div>
+        <img
+          src="assets/img/arrow-curve-left-big.svg"
+          alt="Testimonial arrow"
+          class="arrow-icon"
+        />
+        <div class="text-container-testimonials">
+          <h4>{{ content.name1 }}</h4>
+          <h5>{{ content.project1 }}</h5>
+          <p [innerHTML]="safe.content1"></p>
+        </div>
+      </div>
       <div class="text-container-testimonials">
-        <h4>{{ content.name1 }}</h4>
-        <h5>{{ content.project1 }}</h5>
-        <p [innerHTML]="safe.content1"></p>
+        <h4>{{ content.name2 }}</h4>
+        <h5>{{ content.project2 }}</h5>
+        <p [innerHTML]="safe.content2"></p>
       </div>
     </div>
-    <div class="text-container-testimonials">
-      <h4>{{ content.name2 }}</h4>
-      <h5>{{ content.project2 }}</h5>
-      <p [innerHTML]="safe.content2"></p>
-    </div>
-
   </div>
-</div>
+</ng-container>

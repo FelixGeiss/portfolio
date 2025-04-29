@@ -2,10 +2,9 @@
 @import "../../../styles.scss";
 
 :host {
-  @include flex-center($fd:column);
+  @include flex-center($fd: column);
   margin-bottom: 10rem;
   box-sizing: border-box;
-
 }
 
 .main-container {
@@ -13,54 +12,66 @@
   max-width: $max-width;
   width: 100%;
 
+  overflow: visible;
+
   > div {
-    @include flex-center($jc:flex-start, $ai:stretch);
+    @include flex-center($jc: flex-start, $ai: stretch);
     width: 100%;
-  
- 
+
     > div:first-child {
       @include flex-center();
-     
     }
   }
+
   img {
     width: 5.375rem;
   }
+
+  /* Arrow-Icon: einmaliges Slide-In bei Sichtbarkeit */
+  .arrow-icon {
+    display: inline-block;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 125ms ease-out, opacity 125ms ease-out;
+  }
+
+  /* Slide-In auslösen, wenn im View: einmalig */
+  &.in-view .arrow-icon {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.text-container-testimonials{
-  padding: 0px 0.875rem;
+.text-container-testimonials {
+  padding: 0 0.875rem;
 }
 
 h4 {
-  @include fonts($fw:$bold,$fs:$f-s-24);
+  @include fonts($fw: $bold, $fs: $f-s-24);
   white-space: nowrap;
-  padding: 1.5rem 0 ;
+  padding: 1.5rem 0;
 }
+
 h5 {
-  @include fonts($fs:$f-s-18,$fc:$turquoise);
+  @include fonts($fs: $f-s-18, $fc: $turquoise);
   margin-bottom: $gap-32;
 }
 
 p {
-  @include fonts($fs:$f-s-18,$fc:$turquoise);
+  @include fonts($fs: $f-s-18, $fc: $turquoise);
   max-width: 400px;
 }
-@media (max-width: 768px) {
 
-  h1 {
-    white-space: normal !important;
-    text-align: center !important;
-  }
+@media (max-width: 768px) {
+  h1,
   h2 {
     white-space: normal !important;
     text-align: center !important;
   }
 
-  h4{
+  h4 {
     width: 91% !important;
     text-align: center !important;
     white-space: normal !important;
   }
 }
-
