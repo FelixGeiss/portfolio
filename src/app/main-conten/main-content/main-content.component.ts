@@ -91,7 +91,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
         title: 'Join',
         videoUrl: 'assets/Video/Aufzeichnung join.webm',
         technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
-        githubLink: 'https://github.com/FelixGeiss/join',
+        githubLink: 'https://github.com/FelixGeiss/join-felix',
         liveTestLink: 'http://join.felixgeiss.de/index.html'
       },
       {
