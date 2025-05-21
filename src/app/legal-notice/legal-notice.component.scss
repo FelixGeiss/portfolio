@@ -26,7 +26,7 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
   color: $color-primary;
   line-height: 1.6;
   box-sizing: border-box;
-  min-height: calc(100vh - 19.4rem);
+  min-height: calc(100dvh - 19.4rem);
 
   h2 {
     font-size: 1.75rem;
