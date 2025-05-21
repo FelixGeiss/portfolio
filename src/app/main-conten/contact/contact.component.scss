@@ -12,8 +12,8 @@
 .header-contact {
   @include flex-center($jc: flex-start, $ai: flex-end);
   width: 100%;
-  overflow-x: hidden;   
-  overflow-y: visible;  
+  overflow-x: hidden;
+  overflow-y: visible;
   > img {
     width: 5rem;
     margin-left: 1rem;
@@ -54,6 +54,7 @@ form {
 
     p {
       @include fonts($fc: $turquoise, $fs: $f-s-18);
+      padding-bottom: 1rem;
     }
   }
 
@@ -66,7 +67,7 @@ form {
       @include flex-center($jc: space-between);
 
       > div:nth-child(1) {
-        @include flex-center($ai: flex-start, $fd: column, $jc:space-between);
+        @include flex-center($ai: flex-start, $fd: column, $jc: space-between);
         height: 100%;
       }
     }
@@ -283,13 +284,13 @@ form {
 }
 
 .input-wrapper {
-  margin-top: 1rem;
   position: relative;
   width: 100%;
-
   @include flex-center();
 }
-
+.marin-b {
+  margin-bottom: 2rem;
+}
 .validation-icon {
   position: absolute;
   top: 50%;
@@ -337,12 +338,10 @@ textarea.error::placeholder {
   &--success {
     border: 1px solid $turquoise;
     color: $turquoise;
-
   }
   &--error {
     border: 1px solid $turquoise;
     color: #f92103;
-    
   }
 }
 
@@ -368,9 +367,7 @@ textarea.error::placeholder {
 }
 
 .header-contact {
-
   overflow: visible;
-
 
   .arrow-icon {
     display: inline-block;
@@ -379,11 +376,8 @@ textarea.error::placeholder {
     transition: transform 125ms ease-out, opacity 125ms ease-out;
   }
 
-  
   &.in-view .arrow-icon {
     transform: translateX(0);
     opacity: 1;
   }
 }
-
-

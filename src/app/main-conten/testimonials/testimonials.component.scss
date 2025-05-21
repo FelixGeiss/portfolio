@@ -12,7 +12,7 @@
   max-width: $max-width;
   width: 100%;
 
-  overflow: visible;
+
 
   > div {
     @include flex-center($jc: flex-start, $ai: stretch);
@@ -27,7 +27,7 @@
     width: 5.375rem;
   }
 
-
+ 
   .arrow-icon {
     display: inline-block;
     transform: translateX(-100%);
@@ -43,7 +43,7 @@
 }
 
 .text-container-testimonials {
-  padding: 0 0.875rem;
+  padding: 0 1.875rem;
 }
 
 h4 {

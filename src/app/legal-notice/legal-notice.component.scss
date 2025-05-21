@@ -3,8 +3,8 @@
 :host {
   @include flex-center($fd: column, $jc: flex-start);
   width: 100%;
+  height: 100%;
   margin-top: 7rem;
-  height: calc(100vh - 7rem - 12.25rem);
   min-height: 36.25rem;
   max-width: $max-width;
 }
@@ -26,6 +26,7 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
   color: $color-primary;
   line-height: 1.6;
   box-sizing: border-box;
+  min-height: calc(100vh - 19.4rem);
 
   h2 {
     font-size: 1.75rem;
@@ -59,8 +60,4 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
     }
   }
 }
-@media (max-width: 768px) {
-  :host {
-    height: calc(100vh - 7rem - 14rem);
-  }
-}
+
