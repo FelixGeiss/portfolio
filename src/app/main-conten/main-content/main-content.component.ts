@@ -90,12 +90,12 @@ export class MainContentComponent implements OnInit, OnDestroy {
       {
         title: 'Join',
         videoUrl: 'assets/Video/Aufzeichnung join.webm',
-        technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
+        technologies: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
         githubLink: 'https://github.com/FelixGeiss/join-felix',
         liveTestLink: 'http://join.felixgeiss.de/index.html'
       },
       {
-        title: 'Pollo Loco',
+        title: 'El Pollo Loco',
         videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm',
         technologies: ['JavaScript', 'HTML', 'CSS'],
         githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco',
@@ -127,7 +127,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
     switch (title) {
       case 'Join': return 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.';
       case 'Pokedex': return 'Pokedex web application that uses the Poke API to fetch and display Pokémon data and images. Try it now and discover your favorite Pokémon!';
-      case 'Pollo Loco': return 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and salsa to fight against the crazy hen.';
+      case 'El Pollo Loco': return 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and salsa to fight against the crazy hen.';
     }
     return '';
   }
@@ -139,7 +139,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
     switch (title) {
       case 'Join': return 'Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.';
       case 'Pokedex': return 'Pokédex-Webanwendung, die die Poke API nutzt, um Pokémon-Daten und -Bilder abzurufen und anzuzeigen. Probier es jetzt aus und entdecke deine Lieblings-Pokémon!';
-      case 'Pollo Loco': return 'Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.';
+      case 'El Pollo Loco': return 'Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.';
     }
     return '';
   }
