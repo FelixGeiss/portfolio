@@ -21,7 +21,8 @@ nav {
   @include fonts($fs: $f-s-22);
   max-width: $max-width;
   width: 100%;
-  margin: $gap-24 $gap-105;
+  padding: $gap-24 $gap-105;
+  box-sizing: border-box;
   white-space: nowrap;
 
   > ul {
@@ -101,7 +102,7 @@ span {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     max-width: none;
     list-style: none;
     margin: 0;
@@ -153,6 +154,6 @@ span {
 
 @media (max-width: 1300px){
   nav{
-    margin: $gap-24 3rem!important;
+    padding: $gap-24 3rem !important;
   }
 }

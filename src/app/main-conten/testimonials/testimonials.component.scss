@@ -11,6 +11,7 @@
   @include flex-center($fd: column, $ai: stretch);
   max-width: $max-width;
   width: 100%;
+  overflow-x: hidden;
 
 
 
@@ -42,13 +43,31 @@
   }
 }
 
+.text-container-main {
+  @include flex-center($jc: flex-start, $ai: stretch);
+  gap: $gap-24;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+  margin: 0 auto;
+}
+
+.text-container-main > div {
+  flex: 1 1 22rem;
+  min-width: 0;
+}
+
 .text-container-testimonials {
   padding: 0 1.875rem;
+  flex: 1 1 22rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 h4 {
   @include fonts($fw: $bold, $fs: $f-s-24);
-  white-space: nowrap;
   padding: 1.5rem 0;
 }
 
@@ -60,6 +79,7 @@ h5 {
 p {
   @include fonts($fs: $f-s-18, $fc: $turquoise);
   max-width: 400px;
+  padding-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -73,5 +93,24 @@ p {
     width: 90% !important;
     text-align: center !important;
     white-space: normal !important;
+    margin: 0 auto;
+  }
+
+  .text-container-main {
+    padding: 0 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .text-container-main > div,
+  .text-container-testimonials {
+    flex: 0 0 auto;
+    min-width: 85%;
+    scroll-snap-align: start;
   }
 }

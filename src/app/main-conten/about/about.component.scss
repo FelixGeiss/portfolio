@@ -231,3 +231,34 @@
     font-size: 2.375rem !important;
   }
 }
+
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-right {
+    align-items: center;
+    width: 90%;
+  }
+
+  .icon-container {
+    width: 100%;
+  }
+
+  .suitcase-container {
+    margin-left: 0;
+  }
+
+  .arrow-curve-left,
+  .arrow-curve-right,
+  .arrow-curly {
+    display: none;
+  }
+
+  .maobile-arrow-curve-left,
+  .maobile-arrow-curve-right {
+    display: flex;
+  }
+}
