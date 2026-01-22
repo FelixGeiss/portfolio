@@ -102,6 +102,13 @@ export class MainContentComponent implements OnInit, OnDestroy {
         liveTestLink: 'http://el-pollo-loco.felixgeiss.de/'
       },
       {
+        title: 'Aufguss Manager',
+        videoUrl: 'assets/Video/Aufzeichnung Aufguss Manager.webm',
+        technologies: ['JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL', 'Codex'],
+        githubLink: 'https://github.com/FelixGeiss/AufgussManager',
+        liveTestLink: 'https://aufgussmanager.felixgeiss.de/'
+      },
+      {
         title: 'Pokedex',
         videoUrl: 'assets/Video/Aufzeichnung pokedex.webm',
         technologies: ['JavaScript', 'HTML', 'CSS', 'Pokémon API'],
@@ -128,6 +135,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
       case 'Join': return 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.';
       case 'Pokedex': return 'Pokedex web application that uses the Poke API to fetch and display Pokémon data and images. Try it now and discover your favorite Pokémon!';
       case 'El Pollo Loco': return 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and salsa to fight against the crazy hen.';
+      case 'Aufguss Manager': return 'Aufguss Manager is a tool to manage digital infusions, create surveys, and increase productivity in a sauna landscape.';
     }
     return '';
   }
@@ -140,7 +148,10 @@ export class MainContentComponent implements OnInit, OnDestroy {
       case 'Join': return 'Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.';
       case 'Pokedex': return 'Pokédex-Webanwendung, die die Poke API nutzt, um Pokémon-Daten und -Bilder abzurufen und anzuzeigen. Probier es jetzt aus und entdecke deine Lieblings-Pokémon!';
       case 'El Pollo Loco': return 'Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.';
+      case 'Aufguss Manager': return 'Aufguss Manager ist ein Tool, mit dem man digitale Aufgüsse verwalten, Umfragen erstellen und die Produktivität in einer Saunalandschaft steigern kann.';
     }
     return '';
   }
 }
+
+

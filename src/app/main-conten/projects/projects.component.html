@@ -1,5 +1,8 @@
 <ng-container *ngFor="let project of displayedProjects">
-  <div class="project-container">
+  <div
+    class="project-container"
+    [class.force-left]="project.title === 'El Pollo Loco' || project.title === 'Pokedex'"
+  >
     <div class="image-container fade-in-left" appScrollAnimation>
       <a class="video" [href]="project.liveTestLink" target="_blank">
         <video
