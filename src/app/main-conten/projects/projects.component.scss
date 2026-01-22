@@ -171,6 +171,19 @@ h5{
     align-items: center;
   }
 
+  .project-container:nth-child(2n) .text-container-project,
+  .project-container:nth-child(2n+1) .text-container-project,
+  .project-container.force-left .text-container-project {
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-container:nth-child(2n) .links,
+  .project-container:nth-child(2n+1) .links,
+  .project-container.force-left .links {
+    justify-content: center;
+  }
+
   .image-container {
     max-width: 100%;
     width: 100%;
@@ -178,6 +191,8 @@ h5{
 
   .text-container-project {
     width: 100%;
+    align-items: center;
+    text-align: center;
   }
 
   .links {

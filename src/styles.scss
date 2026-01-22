@@ -307,7 +307,7 @@ p {
     align-items: center;
     flex-direction: column;
     width: 90%;
-    
+    text-align: center;
     h5 {
       text-align: center;
     }
@@ -331,6 +331,7 @@ p {
   form {
     flex-direction: column !important;
     width:80%;
+    margin: 0 auto;
   }
   .form-right {
     margin: 0 !important;
@@ -346,6 +347,9 @@ p {
   }
   .image-container {
     width: 90% !important;
+  }
+  .links {
+    justify-content: center !important;
   }
   app-footer {
     flex-direction: column-reverse;

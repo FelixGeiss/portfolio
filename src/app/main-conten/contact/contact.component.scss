@@ -4,8 +4,10 @@
   transition: all 125ms ease-out;
 }
 :host {
-  @include flex-center($fd: column);
+  @include flex-center($fd: column, $ai: stretch);
+  width: 100%;
   max-width: $max-width;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
