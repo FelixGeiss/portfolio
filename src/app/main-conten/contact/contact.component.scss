@@ -334,6 +334,13 @@ textarea.error::placeholder {
   .arrow-container.show {
     display: flex;
   }
+
+  form {
+    .form-right {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
 }
 
 

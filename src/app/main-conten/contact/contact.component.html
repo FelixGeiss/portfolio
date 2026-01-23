@@ -17,6 +17,9 @@
     <div class="input-wrapper marin-b">
       <input
         type="text"
+        id="contactName"
+        name="name"
+        autocomplete="name"
         formControlName="name"
         [placeholder]="
           contactForm.get('name')?.touched && contactForm.get('name')?.invalid
@@ -45,6 +48,9 @@
     <div class="input-wrapper">
       <input
         type="email"
+        id="contactEmail"
+        name="email"
+        autocomplete="email"
         formControlName="email"
         [placeholder]="
           contactForm.get('email')?.touched && contactForm.get('email')?.invalid
@@ -91,6 +97,9 @@
 
     <div class="input-wrapper">
       <textarea
+        id="contactMessage"
+        name="message"
+        autocomplete="off"
         formControlName="message"
         [placeholder]="
           contactForm.get('message')?.touched &&
