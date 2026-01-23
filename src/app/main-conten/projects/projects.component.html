@@ -9,6 +9,7 @@
           #hoveredVideo
           muted
           preload="metadata"
+          [attr.poster]="project.posterUrl"
           (mouseenter)="playVideo(hoveredVideo)"
           (mouseleave)="resetVideo(hoveredVideo)"
         >
@@ -31,6 +32,7 @@
             #mobileVideo
             muted
             preload="metadata"
+            [attr.poster]="project.posterUrl"
             (mouseenter)="playVideo(mobileVideo)"
             (mouseleave)="resetVideo(mobileVideo)"
           >
