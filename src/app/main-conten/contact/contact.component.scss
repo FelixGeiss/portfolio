@@ -254,6 +254,7 @@ form {
   display: none;
 }
 
+.mail-tel,
 .mail-tel-mobile {
   @include flex-center();
   @include fonts($fc: $turquoise, $fs: $f-s-20);
@@ -262,6 +263,7 @@ form {
 
   a {
     @include flex-center($fd: column);
+    max-width: 100%;
 
     .letter {
       margin-right: 0.5rem;
@@ -340,6 +342,12 @@ textarea.error::placeholder {
       margin-left: 0;
       width: 100%;
     }
+  }
+
+  span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-all;
   }
 }
 
