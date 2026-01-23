@@ -119,6 +119,7 @@ h5{
 .links {
   @include flex-center($jc: flex-start); 
   margin-top: auto;
+  padding-top: $gap-24;
 
   a {
     @include fonts($fc:$turquoise,$fs:$f-s-18);
@@ -192,6 +193,25 @@ h5{
   .mobile-video{
     display: block;
     margin: 3rem 0;
+  }
+
+  .image-container {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .video,
+  .mobile-video {
+    display: block;
+    width: 100%;
+  }
+
+  .image-container video,
+  .image-container .video-poster-fallback,
+  .image-container .video-poster-overlay {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
