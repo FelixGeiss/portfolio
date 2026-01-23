@@ -90,7 +90,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
       {
         title: 'Join',
         videoUrl: 'assets/Video/Aufzeichnung join.webm',
-        posterUrl: 'assets/img/video-posters/Join.png',
+        posterUrl: 'assets/img/video-posters/Join.svg',
         technologies: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
         githubLink: 'https://github.com/FelixGeiss/join-felix',
         liveTestLink: 'http://join.felixgeiss.de/index.html'
@@ -98,7 +98,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
       {
         title: 'El Pollo Loco',
         videoUrl: 'assets/Video/Aufzeichnung el pollo loco.webm',
-        posterUrl: 'assets/img/video-posters/El Pollo Loco.png',
+        posterUrl: 'assets/img/video-posters/El Pollo Loco.svg',
         technologies: ['JavaScript', 'HTML', 'CSS'],
         githubLink: 'https://github.com/FelixGeiss/El-Pollo-Loco',
         liveTestLink: 'http://el-pollo-loco.felixgeiss.de/'
@@ -106,7 +106,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
       {
         title: 'Aufguss Manager',
         videoUrl: 'assets/Video/Aufzeichnung Aufguss Manager.webm',
-        posterUrl: 'assets/img/video-posters/Aufguss Manager.png',
+        posterUrl: 'assets/img/video-posters/Aufguss Manager.svg',
         technologies: ['JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL', 'Codex'],
         githubLink: 'https://github.com/FelixGeiss/AufgussManager',
         liveTestLink: 'https://aufgussmanager.felixgeiss.de/'
@@ -114,7 +114,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
       {
         title: 'Pokedex',
         videoUrl: 'assets/Video/Aufzeichnung pokedex.webm',
-        posterUrl: 'assets/img/video-posters/Pokedex.png',
+        posterUrl: 'assets/img/video-posters/Pokedex.svg',
         technologies: ['JavaScript', 'HTML', 'CSS', 'Pokémon API'],
         githubLink: 'https://github.com/FelixGeiss/pokedex',
         liveTestLink: 'http://pokedex.felixgeiss.de/'

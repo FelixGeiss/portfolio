@@ -5,17 +5,34 @@
   >
     <div class="image-container fade-in-left" appScrollAnimation>
       <a class="video" [href]="project.liveTestLink" target="_blank">
-        <video
-          #hoveredVideo
-          muted
-          preload="metadata"
-          [attr.poster]="project.posterUrl"
-          (mouseenter)="playVideo(hoveredVideo)"
-          (mouseleave)="resetVideo(hoveredVideo)"
-        >
-          <source [src]="project.videoUrl" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
+        <ng-container *ngIf="!isVideoFallback(project.videoUrl); else desktopPoster">
+          <video
+            #hoveredVideo
+            muted
+            preload="metadata"
+            [attr.poster]="project.posterUrl"
+            (mouseenter)="playVideo(hoveredVideo)"
+            (mouseleave)="resetVideo(hoveredVideo)"
+            (error)="setVideoFallback(project.videoUrl)"
+            (loadeddata)="setVideoLoaded(project.videoUrl)"
+          >
+            <source [src]="project.videoUrl" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+          <img
+            class="video-poster-overlay"
+            [class.is-loaded]="isVideoLoaded(project.videoUrl)"
+            [src]="project.posterUrl"
+            [attr.alt]="project.title + ' preview'"
+          />
+        </ng-container>
+        <ng-template #desktopPoster>
+          <img
+            class="video-poster-fallback"
+            [src]="project.posterUrl"
+            [attr.alt]="project.title + ' preview'"
+          />
+        </ng-template>
       </a>
     </div>
     <div class="text-container-project fade-in-right" appScrollAnimation>
@@ -28,17 +45,34 @@
       </h5>
       <div class="image-container fade-in-left" appScrollAnimation>
         <a class="mobile-video" [href]="project.liveTestLink" target="_blank">
-          <video
-            #mobileVideo
-            muted
-            preload="metadata"
-            [attr.poster]="project.posterUrl"
-            (mouseenter)="playVideo(mobileVideo)"
-            (mouseleave)="resetVideo(mobileVideo)"
-          >
-            <source [src]="project.videoUrl" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
+          <ng-container *ngIf="!isVideoFallback(project.videoUrl); else mobilePoster">
+            <video
+              #mobileVideo
+              muted
+              preload="metadata"
+              [attr.poster]="project.posterUrl"
+              (mouseenter)="playVideo(mobileVideo)"
+              (mouseleave)="resetVideo(mobileVideo)"
+              (error)="setVideoFallback(project.videoUrl)"
+              (loadeddata)="setVideoLoaded(project.videoUrl)"
+            >
+              <source [src]="project.videoUrl" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            <img
+              class="video-poster-overlay"
+              [class.is-loaded]="isVideoLoaded(project.videoUrl)"
+              [src]="project.posterUrl"
+              [attr.alt]="project.title + ' preview'"
+            />
+          </ng-container>
+          <ng-template #mobilePoster>
+            <img
+              class="video-poster-fallback"
+              [src]="project.posterUrl"
+              [attr.alt]="project.title + ' preview'"
+            />
+          </ng-template>
         </a>
       </div>
       <div class="links">

@@ -25,6 +25,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   displayedProjects: Project[] = [];
   currentLang: Lang = 'de';
   private langSub!: Subscription;
+  private videoFallbacks = new Set<string>();
+  private videoLoaded = new Set<string>();
 
   constructor(private languageService: LanguageService) {}
 
@@ -63,6 +65,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
    * Play video silently and handle playback errors
    */
   playVideo(video: HTMLVideoElement): void {
+    if (video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) {
+      return;
+    }
     video.muted = true;
     video.play().catch(err => this.handleVideoError(err));
   }
@@ -73,6 +78,34 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   resetVideo(video: HTMLVideoElement): void {
     video.pause();
     video.currentTime = 0;
+  }
+
+  /**
+   * Switch to poster-only fallback for videos that failed to load
+   */
+  setVideoFallback(videoUrl: string): void {
+    this.videoFallbacks.add(videoUrl);
+  }
+
+  /**
+   * Check if a video should show the poster fallback
+   */
+  isVideoFallback(videoUrl: string): boolean {
+    return this.videoFallbacks.has(videoUrl);
+  }
+
+  /**
+   * Mark video as loaded so the poster overlay can be removed
+   */
+  setVideoLoaded(videoUrl: string): void {
+    this.videoLoaded.add(videoUrl);
+  }
+
+  /**
+   * Check if a video has finished loading enough to display
+   */
+  isVideoLoaded(videoUrl: string): boolean {
+    return this.videoLoaded.has(videoUrl);
   }
 
   /**
