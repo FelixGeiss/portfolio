@@ -5,7 +5,7 @@
   >
     <div class="image-container fade-in-left" appScrollAnimation>
       <a class="video" [href]="project.liveTestLink" target="_blank">
-        <ng-container *ngIf="!isVideoFallback(project.videoUrl); else desktopPoster">
+        <ng-container *ngIf="!isSmallScreen && !isVideoFallback(project.videoUrl); else desktopPoster">
           <video
             #hoveredVideo
             muted
@@ -45,7 +45,7 @@
       </h5>
       <div class="image-container fade-in-left" appScrollAnimation>
         <a class="mobile-video" [href]="project.liveTestLink" target="_blank">
-          <ng-container *ngIf="!isVideoFallback(project.videoUrl); else mobilePoster">
+          <ng-container *ngIf="!isSmallScreen && !isVideoFallback(project.videoUrl); else mobilePoster">
             <video
               #mobileVideo
               muted

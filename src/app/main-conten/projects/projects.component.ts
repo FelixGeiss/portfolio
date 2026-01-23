@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from './project.model';
 import { Subscription } from 'rxjs';
@@ -27,6 +27,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   private langSub!: Subscription;
   private videoFallbacks = new Set<string>();
   private videoLoaded = new Set<string>();
+  private readonly mobileBreakpoint = 768;
+  isSmallScreen = false;
 
   constructor(private languageService: LanguageService) {}
 
@@ -34,6 +36,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
    * Subscribe to language changes
    */
   ngOnInit(): void {
+    this.updateScreenState();
     this.langSub = this.languageService.currentLang$
       .subscribe(lang => this.onLanguageChange(lang));
   }
@@ -43,6 +46,11 @@ export class ProjectsComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     this.langSub.unsubscribe();
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.updateScreenState();
   }
 
   /**
@@ -59,6 +67,14 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   private updateDisplayedProjects(): void {
     this.displayedProjects =
       this.currentLang === 'de' ? this.projectsDe : this.projectsEn;
+  }
+
+  private updateScreenState(): void {
+    if (typeof window === 'undefined') {
+      this.isSmallScreen = false;
+      return;
+    }
+    this.isSmallScreen = window.innerWidth <= this.mobileBreakpoint;
   }
 
   /**
