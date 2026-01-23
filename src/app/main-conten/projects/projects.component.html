@@ -3,7 +3,7 @@
     class="project-container"
     [class.force-left]="project.title === 'El Pollo Loco' || project.title === 'Pokedex'"
   >
-    <div class="image-container fade-in-left" appScrollAnimation>
+    <div class="image-container fade-in-left" appScrollAnimation *ngIf="!isSmallScreen">
       <a class="video" [href]="project.liveTestLink" target="_blank">
         <ng-container *ngIf="!isSmallScreen && !isVideoFallback(project.videoUrl); else desktopPoster">
           <video
@@ -43,7 +43,7 @@
       <h5 class="description">
         {{ project.description }}
       </h5>
-      <div class="image-container fade-in-left" appScrollAnimation>
+      <div class="image-container fade-in-left" appScrollAnimation *ngIf="isSmallScreen">
         <a class="mobile-video" [href]="project.liveTestLink" target="_blank">
           <ng-container *ngIf="!isSmallScreen && !isVideoFallback(project.videoUrl); else mobilePoster">
             <video
